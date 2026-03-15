@@ -403,20 +403,21 @@ code {
   line-height: 1.6;
 }
 
-/* ── Item Lists (replaces emoji icon lists) ── */
+/* ── Item Lists (stacked label + description) ── */
 .item-list {
   list-style: none;
   margin: 1rem 0;
 }
 
 .item-list li {
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--gray-100);
   font-size: 0.88rem;
-  line-height: 1.6;
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  line-height: 1.65;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 0.65rem;
+  align-items: start;
 }
 
 .item-list li:last-child { border-bottom: none; }
@@ -433,6 +434,27 @@ code {
   font-weight: 700;
   margin-top: 2px;
   color: white;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.item-list li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+}
+
+.item-list li .item-desc {
+  grid-column: 2;
+  color: var(--gray-600);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.item-list li .item-text {
+  grid-column: 2;
 }
 
 .item-marker.red { background: var(--red); }
@@ -1142,10 +1164,10 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>Recommended workflow</h3>
   <ul class="item-list">
-    <li><span class="item-marker num">1</span> <strong>Outline (15 min):</strong> Write 5–7 bullet points covering the main ideas. Use the target keyword as the H1 or a close variation.</li>
-    <li><span class="item-marker num">2</span> <strong>Draft (45–60 min):</strong> Write the post from the outline. Don't aim for perfection — aim for clarity. 800–1,500 words. Use short paragraphs, subheadings, and bullet points for scannability.</li>
-    <li><span class="item-marker num">3</span> <strong>Optimize (15 min):</strong> Add the meta title and meta description. Add alt text to any images. Add 2–3 internal links to other pages on the site. Make sure the target keyword appears in the H1, first paragraph, and at least one subheading.</li>
-    <li><span class="item-marker num">4</span> <strong>Publish and share (10 min):</strong> Publish the post. Share on Instagram and TikTok with a summary or quote graphic. Email subscribers if list exists.</li>
+    <li><span class="item-marker num">1</span> <span class="item-text"><strong>Outline (15 min):</strong> Write 5–7 bullet points covering the main ideas. Use the target keyword as the H1 or a close variation.</span></li>
+    <li><span class="item-marker num">2</span> <span class="item-text"><strong>Draft (45–60 min):</strong> Write the post from the outline. Don't aim for perfection — aim for clarity. 800–1,500 words. Use short paragraphs, subheadings, and bullet points for scannability.</span></li>
+    <li><span class="item-marker num">3</span> <span class="item-text"><strong>Optimize (15 min):</strong> Add the meta title and meta description. Add alt text to any images. Add 2–3 internal links to other pages on the site. Make sure the target keyword appears in the H1, first paragraph, and at least one subheading.</span></li>
+    <li><span class="item-marker num">4</span> <span class="item-text"><strong>Publish and share (10 min):</strong> Publish the post. Share on Instagram and TikTok with a summary or quote graphic. Email subscribers if list exists.</span></li>
   </ul>
 
   <p>Total time per post: <strong>~90 minutes.</strong> That's two posts per month at under 3 hours/month of writing time. Achievable.</p>
@@ -1189,11 +1211,11 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>From one blog post, create:</h3>
   <ul class="item-list">
-    <li><span class="item-marker neutral">•</span> <strong>Instagram carousel:</strong> Pull 5–7 key facts or tips from the post, turn each into a slide. This is the highest-performing organic format on Instagram for educational content.</li>
-    <li><span class="item-marker neutral">•</span> <strong>TikTok/Reel:</strong> Haqq talking to camera, sharing the one most surprising fact from the post. 30–60 seconds. Link to the full post in bio.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Quote graphic:</strong> One compelling stat or sentence from the post, designed as a shareable graphic. "Zamzam water contains 25x more calcium than tap water."</li>
-    <li><span class="item-marker neutral">•</span> <strong>Email snippet:</strong> When the email list is built, each post becomes a newsletter topic. 3-sentence summary + "Read the full post" link.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Community post:</strong> Share the blog post link with a personal comment in Muslim Facebook groups, Reddit (r/islam, r/muslimlounge), and other community spaces where Haqq is already present. Don't spam — add value, share the link naturally.</li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Instagram carousel:</strong> Pull 5–7 key facts or tips from the post, turn each into a slide. This is the highest-performing organic format on Instagram for educational content.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>TikTok/Reel:</strong> Haqq talking to camera, sharing the one most surprising fact from the post. 30–60 seconds. Link to the full post in bio.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Quote graphic:</strong> One compelling stat or sentence from the post, designed as a shareable graphic. "Zamzam water contains 25x more calcium than tap water."</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Email snippet:</strong> When the email list is built, each post becomes a newsletter topic. 3-sentence summary + "Read the full post" link.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Community post:</strong> Share the blog post link with a personal comment in Muslim Facebook groups, Reddit (r/islam, r/muslimlounge), and other community spaces where Haqq is already present. Don't spam — add value, share the link naturally.</span></li>
   </ul>
 
   <div class="verdict verdict-good">

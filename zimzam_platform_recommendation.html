@@ -403,20 +403,21 @@ code {
   line-height: 1.6;
 }
 
-/* ── Item Lists (replaces emoji icon lists) ── */
+/* ── Item Lists (stacked label + description) ── */
 .item-list {
   list-style: none;
   margin: 1rem 0;
 }
 
 .item-list li {
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--gray-100);
   font-size: 0.88rem;
-  line-height: 1.6;
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  line-height: 1.65;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 0.65rem;
+  align-items: start;
 }
 
 .item-list li:last-child { border-bottom: none; }
@@ -433,6 +434,27 @@ code {
   font-weight: 700;
   margin-top: 2px;
   color: white;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.item-list li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+}
+
+.item-list li .item-desc {
+  grid-column: 2;
+  color: var(--gray-600);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.item-list li .item-text {
+  grid-column: 2;
 }
 
 .item-marker.red { background: var(--red); }
@@ -1039,17 +1061,17 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>Recommended free apps</h3>
   <ul class="item-list">
-    <li><span class="item-marker amber">•</span> <strong>Judge.me (Free plan)</strong> — Product reviews with photo/video support, review request emails, and Google review schema. The single most important app to install on day one.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Shopify Email (Built-in)</strong> — Email marketing with templates, automation, and segmentation. 10,000 emails/month free.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Smart SEO (Free plan)</strong> — Automatically generates JSON-LD structured data (Product, Article, Organization, FAQ schema). Handles the technical SEO from Deliverable 4 with zero manual work.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Google & YouTube Channel (Free)</strong> — Connects the store to Google Merchant Center and Google Analytics. Enables product listings in Google Shopping results.</li>
-    <li><span class="item-marker neutral">•</span> <strong>TikTok & Instagram Shopping (Free)</strong> — Native social selling integration for Haqq's existing platforms.</li>
+    <li><span class="item-marker amber">•</span> <span class="item-text"><strong>Judge.me (Free plan)</strong> — Product reviews with photo/video support, review request emails, and Google review schema. The single most important app to install on day one.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Shopify Email (Built-in)</strong> — Email marketing with templates, automation, and segmentation. 10,000 emails/month free.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Smart SEO (Free plan)</strong> — Automatically generates JSON-LD structured data (Product, Article, Organization, FAQ schema). Handles the technical SEO from Deliverable 4 with zero manual work.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Google & YouTube Channel (Free)</strong> — Connects the store to Google Merchant Center and Google Analytics. Enables product listings in Google Shopping results.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>TikTok & Instagram Shopping (Free)</strong> — Native social selling integration for Haqq's existing platforms.</span></li>
   </ul>
 
   <h3>Recommended paid apps (add when ready)</h3>
   <ul class="item-list">
-    <li><span class="item-marker neutral">•</span> <strong>Seal Subscriptions ($0–$5/mo)</strong> — Add a "Subscribe & Save" option when ready to launch recurring orders. Free up to 150 subscriptions.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Bundler (Free–$10/mo)</strong> — Create product bundles (e.g., "3-pack" or "Ramadan Gift Set") when the product line expands.</li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Seal Subscriptions ($0–$5/mo)</strong> — Add a "Subscribe & Save" option when ready to launch recurring orders. Free up to 150 subscriptions.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Bundler (Free–$10/mo)</strong> — Create product bundles (e.g., "3-pack" or "Ramadan Gift Set") when the product line expands.</span></li>
   </ul>
 
   <h3>Theme recommendation</h3>
@@ -1064,25 +1086,25 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>Before launch</h3>
   <ul class="item-list">
-    <li><span class="item-marker num">1</span> <strong>Sign up for Shopify Basic.</strong> Use the free trial or $1/mo intro offer. Choose the Dawn theme.</li>
-    <li><span class="item-marker num">2</span> <strong>Set up the product.</strong> Add Zim Zam Premium Mineral Mix with photos, price, description, servings info, and ingredients. Takes 15 minutes.</li>
-    <li><span class="item-marker num">3</span> <strong>Install the 5 free apps</strong> listed above (Judge.me, Smart SEO, Google channel, TikTok, Instagram).</li>
-    <li><span class="item-marker num">4</span> <strong>Build the Phase 1 pages</strong> from Deliverable 3: Homepage, Shop, Our Story, How It Works, FAQ. This is the biggest task — but it's a one-time build.</li>
-    <li><span class="item-marker num">5</span> <strong>Enter SEO metadata</strong> for every page using the blueprints from Deliverable 4 (meta titles, meta descriptions, H1s).</li>
-    <li><span class="item-marker num">6</span> <strong>Set up Shopify Payments.</strong> Connect bank account for payouts. Accepts all major cards, Apple Pay, Google Pay.</li>
-    <li><span class="item-marker num">7</span> <strong>Configure shipping rates and zones.</strong></li>
-    <li><span class="item-marker num">8</span> <strong>Set up Google Analytics 4</strong> via the Google Channel app.</li>
-    <li><span class="item-marker num">9</span> <strong>Connect the domain.</strong> Point zimzamlabs.com to the new Shopify store. Shopify's help docs walk through this for every domain registrar.</li>
-    <li><span class="item-marker num">10</span> <strong>Test everything.</strong> Place a test order. Check mobile. Check all links. Check the blog.</li>
+    <li><span class="item-marker num">1</span> <span class="item-text"><strong>Sign up for Shopify Basic.</strong> Use the free trial or $1/mo intro offer. Choose the Dawn theme.</span></li>
+    <li><span class="item-marker num">2</span> <span class="item-text"><strong>Set up the product.</strong> Add Zim Zam Premium Mineral Mix with photos, price, description, servings info, and ingredients. Takes 15 minutes.</span></li>
+    <li><span class="item-marker num">3</span> <span class="item-text"><strong>Install the 5 free apps</strong> listed above (Judge.me, Smart SEO, Google channel, TikTok, Instagram).</span></li>
+    <li><span class="item-marker num">4</span> <span class="item-text"><strong>Build the Phase 1 pages</strong> from Deliverable 3: Homepage, Shop, Our Story, How It Works, FAQ. This is the biggest task — but it's a one-time build.</span></li>
+    <li><span class="item-marker num">5</span> <span class="item-text"><strong>Enter SEO metadata</strong> for every page using the blueprints from Deliverable 4 (meta titles, meta descriptions, H1s).</span></li>
+    <li><span class="item-marker num">6</span> <span class="item-text"><strong>Set up Shopify Payments.</strong> Connect bank account for payouts. Accepts all major cards, Apple Pay, Google Pay.</span></li>
+    <li><span class="item-marker num">7</span> <span class="item-text"><strong>Configure shipping rates and zones.</strong></span></li>
+    <li><span class="item-marker num">8</span> <span class="item-text"><strong>Set up Google Analytics 4</strong> via the Google Channel app.</span></li>
+    <li><span class="item-marker num">9</span> <span class="item-text"><strong>Connect the domain.</strong> Point zimzamlabs.com to the new Shopify store. Shopify's help docs walk through this for every domain registrar.</span></li>
+    <li><span class="item-marker num">10</span> <span class="item-text"><strong>Test everything.</strong> Place a test order. Check mobile. Check all links. Check the blog.</span></li>
   </ul>
 
   <h3>After launch</h3>
   <ul class="item-list">
-    <li><span class="item-marker check">✓</span> <strong>Set up Google Search Console</strong> and submit the sitemap.</li>
-    <li><span class="item-marker check">✓</span> <strong>Publish the first 3 blog posts</strong> from the Month 1 roadmap.</li>
-    <li><span class="item-marker check">✓</span> <strong>Request reviews</strong> from early customers and anyone who's already purchased from the Square store. Judge.me can send automated review request emails.</li>
-    <li><span class="item-marker check">✓</span> <strong>Update all social media bios</strong> with the new link (same domain, so this may not be needed if the domain was already pointing to Square).</li>
-    <li><span class="item-marker check">✓</span> <strong>Deactivate the Square Online store</strong> once the Shopify store is live and verified.</li>
+    <li><span class="item-marker check">✓</span> <span class="item-text"><strong>Set up Google Search Console</strong> and submit the sitemap.</span></li>
+    <li><span class="item-marker check">✓</span> <span class="item-text"><strong>Publish the first 3 blog posts</strong> from the Month 1 roadmap.</span></li>
+    <li><span class="item-marker check">✓</span> <span class="item-text"><strong>Request reviews</strong> from early customers and anyone who's already purchased from the Square store. Judge.me can send automated review request emails.</span></li>
+    <li><span class="item-marker check">✓</span> <span class="item-text"><strong>Update all social media bios</strong> with the new link (same domain, so this may not be needed if the domain was already pointing to Square).</span></li>
+    <li><span class="item-marker check">✓</span> <span class="item-text"><strong>Deactivate the Square Online store</strong> once the Shopify store is live and verified.</span></li>
   </ul>
 
   <div class="verdict verdict-good">
@@ -1117,11 +1139,11 @@ table tr:last-child td { border-bottom: none; }
   <p>If this all feels like a lot, here are the five highest-impact actions ranked by what moves the needle soonest:</p>
 
   <ul class="item-list">
-    <li><span class="item-marker num">1</span> <strong>Sign up for Shopify</strong> (take the free trial or $1/mo intro). Build the Phase 1 pages. Move the product over. Go live.</li>
-    <li><span class="item-marker num">2</span> <strong>Get 5 customer reviews on the product page.</strong> Ask friends, family, early customers. This is the single fastest trust-builder.</li>
-    <li><span class="item-marker num">3</span> <strong>Write the Our Story page.</strong> Tell the full reversion and Zamzam journey. This is the page that converts skeptics and gets shared.</li>
-    <li><span class="item-marker num">4</span> <strong>Publish the first 3 blog posts</strong> (Zamzam water explainer, Ramadan hydration guide, founder story). Start the SEO clock.</li>
-    <li><span class="item-marker num">5</span> <strong>Set up Google Search Console</strong> and submit the sitemap. Tell Google the site exists.</li>
+    <li><span class="item-marker num">1</span> <span class="item-text"><strong>Sign up for Shopify</strong> (take the free trial or $1/mo intro). Build the Phase 1 pages. Move the product over. Go live.</span></li>
+    <li><span class="item-marker num">2</span> <span class="item-text"><strong>Get 5 customer reviews on the product page.</strong> Ask friends, family, early customers. This is the single fastest trust-builder.</span></li>
+    <li><span class="item-marker num">3</span> <span class="item-text"><strong>Write the Our Story page.</strong> Tell the full reversion and Zamzam journey. This is the page that converts skeptics and gets shared.</span></li>
+    <li><span class="item-marker num">4</span> <span class="item-text"><strong>Publish the first 3 blog posts</strong> (Zamzam water explainer, Ramadan hydration guide, founder story). Start the SEO clock.</span></li>
+    <li><span class="item-marker num">5</span> <span class="item-text"><strong>Set up Google Search Console</strong> and submit the sitemap. Tell Google the site exists.</span></li>
   </ul>
 
   <p>Those five actions, done in the next 2 weeks, will fundamentally change the trajectory of Zim Zam Labs. Everything else in these deliverables builds from there.</p>

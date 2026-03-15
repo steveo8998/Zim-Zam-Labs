@@ -403,20 +403,21 @@ code {
   line-height: 1.6;
 }
 
-/* ── Item Lists (replaces emoji icon lists) ── */
+/* ── Item Lists (stacked label + description) ── */
 .item-list {
   list-style: none;
   margin: 1rem 0;
 }
 
 .item-list li {
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--gray-100);
   font-size: 0.88rem;
-  line-height: 1.6;
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  line-height: 1.65;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 0.65rem;
+  align-items: start;
 }
 
 .item-list li:last-child { border-bottom: none; }
@@ -433,6 +434,27 @@ code {
   font-weight: 700;
   margin-top: 2px;
   color: white;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.item-list li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+}
+
+.item-list li .item-desc {
+  grid-column: 2;
+  color: var(--gray-600);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.item-list li .item-text {
+  grid-column: 2;
 }
 
 .item-marker.red { background: var(--red); }
@@ -906,8 +928,8 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>Current site: 2 pages</h3>
   <ul class="item-list">
-    <li><span class="item-marker neutral">•</span> <strong>Homepage</strong> — one extremely long page doing the work of six pages: hero, science, product, ingredients, founder, and footer. Google can only rank this for one keyword cluster.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Shop page</strong> — a single product listing linked from the homepage. Minimal product detail.</li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Homepage</strong> — one extremely long page doing the work of six pages: hero, science, product, ingredients, founder, and footer. Google can only rank this for one keyword cluster.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Shop page</strong> — a single product listing linked from the homepage. Minimal product detail.</span></li>
   </ul>
 
   <h3>Proposed site: 10 pages + blog</h3>
@@ -1271,26 +1293,26 @@ table tr:last-child td { border-bottom: none; }
 
   <h3>Phase 1: The essentials (launch with these)</h3>
   <ul class="item-list">
-    <li><span class="item-marker num">1</span> <strong>Homepage</strong> — redesigned per the blueprint above. Shorter, sharper, faith-first.</li>
-    <li><span class="item-marker num">2</span> <strong>Shop / Product Page</strong> — with reviews, servings info, quick FAQ, and charitable badge.</li>
-    <li><span class="item-marker num">3</span> <strong>Our Story</strong> — Haqq's full founder narrative. This is a conversion page disguised as a story page.</li>
-    <li><span class="item-marker num">4</span> <strong>How It Works</strong> — removes the biggest conversion blocker (people not knowing what to do with the product).</li>
-    <li><span class="item-marker num">5</span> <strong>FAQ</strong> — handles objections, especially the faith-related ones. Enables FAQ schema for Google.</li>
+    <li><span class="item-marker num">1</span> <span class="item-text"><strong>Homepage</strong> — redesigned per the blueprint above. Shorter, sharper, faith-first.</span></li>
+    <li><span class="item-marker num">2</span> <span class="item-text"><strong>Shop / Product Page</strong> — with reviews, servings info, quick FAQ, and charitable badge.</span></li>
+    <li><span class="item-marker num">3</span> <span class="item-text"><strong>Our Story</strong> — Haqq's full founder narrative. This is a conversion page disguised as a story page.</span></li>
+    <li><span class="item-marker num">4</span> <span class="item-text"><strong>How It Works</strong> — removes the biggest conversion blocker (people not knowing what to do with the product).</span></li>
+    <li><span class="item-marker num">5</span> <span class="item-text"><strong>FAQ</strong> — handles objections, especially the faith-related ones. Enables FAQ schema for Google.</span></li>
   </ul>
 
   <h3>Phase 2: Build authority (launch within 2–4 weeks)</h3>
   <ul class="item-list">
-    <li><span class="item-marker num">6</span> <strong>The Science of Zamzam</strong> — the primary SEO page. This starts attracting organic traffic.</li>
-    <li><span class="item-marker num">7</span> <strong>Our Ingredients</strong> — moves the ingredient deep-dives off the homepage. Replace stock graphics.</li>
-    <li><span class="item-marker num">8</span> <strong>Blog</strong> — launch with 2–3 posts from the content roadmap. Begin the SEO engine.</li>
+    <li><span class="item-marker num">6</span> <span class="item-text"><strong>The Science of Zamzam</strong> — the primary SEO page. This starts attracting organic traffic.</span></li>
+    <li><span class="item-marker num">7</span> <span class="item-text"><strong>Our Ingredients</strong> — moves the ingredient deep-dives off the homepage. Replace stock graphics.</span></li>
+    <li><span class="item-marker num">8</span> <span class="item-text"><strong>Blog</strong> — launch with 2–3 posts from the content roadmap. Begin the SEO engine.</span></li>
   </ul>
 
   <h3>Phase 3: Complete the picture (within 1–2 months)</h3>
   <ul class="item-list">
-    <li><span class="item-marker num">9</span> <strong>Our Mission & Impact</strong> — once charitable specifics are confirmed.</li>
-    <li><span class="item-marker num">10</span> <strong>Contact</strong> — simple form page.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Policy pages</strong> — Privacy, Terms, Shipping & Returns.</li>
-    <li><span class="item-marker neutral">•</span> <strong>Ongoing blog posts</strong> — per the content roadmap (Deliverable 5).</li>
+    <li><span class="item-marker num">9</span> <span class="item-text"><strong>Our Mission & Impact</strong> — once charitable specifics are confirmed.</span></li>
+    <li><span class="item-marker num">10</span> <span class="item-text"><strong>Contact</strong> — simple form page.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Policy pages</strong> — Privacy, Terms, Shipping & Returns.</span></li>
+    <li><span class="item-marker neutral">•</span> <span class="item-text"><strong>Ongoing blog posts</strong> — per the content roadmap (Deliverable 5).</span></li>
   </ul>
 
   <div class="summary-box">

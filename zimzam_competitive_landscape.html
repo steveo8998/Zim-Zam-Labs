@@ -403,20 +403,21 @@ code {
   line-height: 1.6;
 }
 
-/* ── Item Lists (replaces emoji icon lists) ── */
+/* ── Item Lists (stacked label + description) ── */
 .item-list {
   list-style: none;
   margin: 1rem 0;
 }
 
 .item-list li {
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--gray-100);
   font-size: 0.88rem;
-  line-height: 1.6;
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  line-height: 1.65;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 0.65rem;
+  align-items: start;
 }
 
 .item-list li:last-child { border-bottom: none; }
@@ -433,6 +434,27 @@ code {
   font-weight: 700;
   margin-top: 2px;
   color: white;
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.item-list li strong {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+}
+
+.item-list li .item-desc {
+  grid-column: 2;
+  color: var(--gray-600);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.item-list li .item-text {
+  grid-column: 2;
 }
 
 .item-marker.red { background: var(--red); }
@@ -1096,10 +1118,10 @@ table tr:last-child td { border-bottom: none; }
   <p>Imagine four overlapping circles representing four buyer motivations for Zim Zam's target customer:</p>
 
   <ul class="item-list">
-    <li><span class="item-marker blue">•</span> <strong>Spiritual connection to Zamzam water.</strong> Zamzam water sellers address this — but at high cost, uncertain authenticity, and zero repeatability.</li>
-    <li><span class="item-marker green">✓</span> <strong>Health and mineral wellness.</strong> Mainstream electrolyte brands address this — but with no spiritual dimension, no community alignment, and no Muslim-specific appeal.</li>
-    <li><span class="item-marker amber">!</span> <strong>Halal and Muslim-owned preference.</strong> Halal supplement brands address this — but none are in the mineral/hydration space.</li>
-    <li><span class="item-marker purple">•</span> <strong>Charitable giving and community impact.</strong> Give-back brands address this — but mostly in fashion, food, and jewelry. Nobody in wellness/supplements.</li>
+    <li><span class="item-marker blue">•</span> <span class="item-text"><strong>Spiritual connection to Zamzam water.</strong> Zamzam water sellers address this — but at high cost, uncertain authenticity, and zero repeatability.</span></li>
+    <li><span class="item-marker green">✓</span> <span class="item-text"><strong>Health and mineral wellness.</strong> Mainstream electrolyte brands address this — but with no spiritual dimension, no community alignment, and no Muslim-specific appeal.</span></li>
+    <li><span class="item-marker amber">!</span> <span class="item-text"><strong>Halal and Muslim-owned preference.</strong> Halal supplement brands address this — but none are in the mineral/hydration space.</span></li>
+    <li><span class="item-marker purple">•</span> <span class="item-text"><strong>Charitable giving and community impact.</strong> Give-back brands address this — but mostly in fashion, food, and jewelry. Nobody in wellness/supplements.</span></li>
   </ul>
 
   <div class="verdict verdict-good">
@@ -1111,10 +1133,10 @@ table tr:last-child td { border-bottom: none; }
   <p>First-mover advantage in a niche market is valuable, but it's not permanent. Someone could theoretically launch a competing Zamzam mineral blend next year. What makes the position defensible is:</p>
 
   <ul class="item-list">
-    <li><span class="item-marker blue">•</span> <strong>SEO and content ownership.</strong> If Zim Zam creates the best content around Zamzam water science, benefits, and mineral education, it will be extremely hard for a late entrant to displace those rankings. This is the strongest case for investing in SEO and blogging now.</li>
-    <li><span class="item-marker blue">•</span> <strong>Brand loyalty and community.</strong> Muslim consumers who feel a personal connection to Haqq's story and mission won't switch to a faceless competitor easily — especially if the charitable giving is transparent and meaningful.</li>
-    <li><span class="item-marker blue">•</span> <strong>Haqq's personal brand.</strong> As a revert Muslim with a social media following, Haqq <em>is</em> the brand in a way that can't be replicated. People buy from people they trust.</li>
-    <li><span class="item-marker blue">•</span> <strong>Formulation specificity.</strong> The Baja Sea Salt sourcing story, the specific mineral ratios, the ingredient selection — these details are part of the brand IP and story that a competitor would have to build from scratch.</li>
+    <li><span class="item-marker blue">•</span> <span class="item-text"><strong>SEO and content ownership.</strong> If Zim Zam creates the best content around Zamzam water science, benefits, and mineral education, it will be extremely hard for a late entrant to displace those rankings. This is the strongest case for investing in SEO and blogging now.</span></li>
+    <li><span class="item-marker blue">•</span> <span class="item-text"><strong>Brand loyalty and community.</strong> Muslim consumers who feel a personal connection to Haqq's story and mission won't switch to a faceless competitor easily — especially if the charitable giving is transparent and meaningful.</span></li>
+    <li><span class="item-marker blue">•</span> <span class="item-text"><strong>Haqq's personal brand.</strong> As a revert Muslim with a social media following, Haqq <em>is</em> the brand in a way that can't be replicated. People buy from people they trust.</span></li>
+    <li><span class="item-marker blue">•</span> <span class="item-text"><strong>Formulation specificity.</strong> The Baja Sea Salt sourcing story, the specific mineral ratios, the ingredient selection — these details are part of the brand IP and story that a competitor would have to build from scratch.</span></li>
   </ul>
 </section>
 
