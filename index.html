@@ -775,21 +775,21 @@ table tr:last-child td { border-bottom: none; }
 }
 
 a.deliverable-card {
-  background: var(--paper);
-  border: 1px solid var(--border-color);
+  background: white;
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
+  padding: 1.35rem 1.5rem;
   text-decoration: none;
   color: var(--ink);
   display: block;
-  transition: all 0.2s;
+  transition: all 0.25s;
+  box-shadow: 0 1px 3px rgba(15,23,42,0.04), 0 4px 12px rgba(15,23,42,0.03);
 }
 
 a.deliverable-card:hover {
   border-color: var(--accent);
-  background: var(--accent-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(8,145,178,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(8,145,178,0.1);
 }
 
 .card-num {
@@ -808,6 +808,7 @@ a.deliverable-card:hover {
   margin-bottom: 0.35rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
 .card-desc {
@@ -819,6 +820,146 @@ a.deliverable-card:hover {
 @media (max-width: 640px) {
   .hero { padding: 3rem 1.25rem 2.5rem; }
   .main { padding: 2rem 1.25rem; }
+}
+
+/* ── Overview Section ── */
+.overview {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.overview-heading {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.overview p {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  max-width: 680px;
+}
+
+.overview p:last-of-type {
+  margin-bottom: 0;
+}
+
+.overview-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2.5rem 0 0;
+}
+
+/* ── Journey Path ── */
+.journey {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1rem;
+}
+
+.journey-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.journey-path {
+  position: relative;
+  display: grid;
+  gap: 0;
+}
+
+.journey-step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 0 0.85rem;
+  align-items: start;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.journey-step:last-child { padding-bottom: 0; }
+
+/* Vertical connector line */
+.journey-step::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+  background: var(--gray-200);
+}
+
+.journey-step:last-child::before { display: none; }
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.journey-step.step-destination .step-num {
+  background: var(--accent);
+  width: 40px;
+  height: 40px;
+  margin-left: -2px;
+  font-size: 0.85rem;
+}
+
+.step-content {
+  padding-top: 0.35rem;
+}
+
+.step-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+  line-height: 1.35;
+}
+
+.step-desc {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  line-height: 1.55;
+}
+
+.journey-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0 0;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .overview { padding: 2.5rem 1.25rem 1.5rem; }
+  .journey { padding: 2rem 1.25rem 1rem; }
+  .step-num { width: 30px; height: 30px; font-size: 0.65rem; }
+  .journey-step { grid-template-columns: 30px 1fr; }
+  .journey-step::before { left: 14px; top: 30px; }
+  .journey-step.step-destination .step-num { width: 34px; height: 34px; margin-left: -2px; }
 }
 </style>
 </head>
@@ -840,8 +981,65 @@ a.deliverable-card:hover {
   </div>
 </header>
 
+<section class="overview">
+  <h2 class="overview-heading">Before You Dive In</h2>
+  <p>Zim Zam Labs has something rare — a genuinely unique product, a deeply resonant story, and an audience that actively wants to support it. The mineral science is real. The spiritual connection is powerful. The market gap is wide open. <strong>No one else is doing what Zim Zam does.</strong></p>
+  <p>But right now, almost nobody can find it. The current website is invisible to Google, built on a platform that limits growth, and missing the pages, content, and infrastructure needed to turn interest into traffic and traffic into customers. That's what this strategy package fixes.</p>
+  <p>The six deliverables below are designed to be read in order. Each one builds on the last — starting with an honest assessment of where things stand today, then laying out the market opportunity, the site structure, the search strategy, the content plan, and finally the platform to make it all work. By the time you finish reading, you'll have a complete, actionable roadmap to take Zim Zam from invisible to discoverable.</p>
+  <hr class="overview-divider">
+</section>
+
+<section class="journey">
+  <div class="journey-label">The Path Forward</div>
+  <div class="journey-path">
+    <div class="journey-step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Understand where you are</div>
+        <div class="step-desc">A clear-eyed audit of the current site — what's working, what's not, and why Google can't see you.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">See the opportunity</div>
+        <div class="step-desc">The competitive landscape reveals a massive whitespace — no one occupies the position Zim Zam sits in.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Build the foundation</div>
+        <div class="step-desc">A new site architecture designed to capture search traffic from every angle — 10 pages, each with a purpose.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Get discovered</div>
+        <div class="step-desc">35+ keyword targets, page-by-page SEO blueprints, and a strategy to show up in Google and AI answers.</div>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <div class="step-title">Create the content engine</div>
+        <div class="step-desc">30 blog posts over 12 months that build organic traffic, establish authority, and drive sales.</div>
+      </div>
+    </div>
+    <div class="journey-step step-destination">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <div class="step-title">Launch on the right platform</div>
+        <div class="step-desc">The platform recommendation and migration plan to make everything above possible — achievable in a single weekend.</div>
+      </div>
+    </div>
+  </div>
+  <hr class="journey-divider">
+</section>
+
 <main class="main">
-  <p class="intro">Each deliverable builds on the last. Start with the Website Audit and work your way through.</p>
+  <p class="intro">Start with Deliverable 1 and work your way through. Each one builds on the last.</p>
 
   <div class="card-grid">
     <a class="deliverable-card" href="zimzam_website_audit.html">
