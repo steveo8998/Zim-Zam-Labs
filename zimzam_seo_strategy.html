@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — SEO Strategy & Keyword Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── SEO: Keyword Table ── */
+.kw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 1rem 0;
+}
+
+.kw-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+.kw-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+.kw-table tr:last-child td { border-bottom: none; }
+
+.kw-keyword {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.kw-vol {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.kw-intent {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+}
+
+/* ── SEO: Page Blueprint Cards ── */
+.seo-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.seo-card:hover { border-color: var(--gray-300); }
+
+.seo-card-header {
+  background: var(--gray-50);
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.seo-page-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.seo-slug {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  background: var(--accent-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.seo-meta {
+  padding: 1rem 1.15rem;
+}
+
+.seo-meta-item {
+  margin-bottom: 0.85rem;
+}
+
+.seo-meta-item:last-child { margin-bottom: 0; }
+
+.seo-meta-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 0.25rem;
+}
+
+.seo-meta-value {
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.seo-meta-value.meta-title {
+  font-weight: 600;
+  color: var(--accent-hover);
+  font-size: 0.92rem;
+}
+
+.seo-meta-value.meta-desc {
+  color: var(--gray-600);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.seo-char-count {
+  display: inline-block;
+  font-size: 0.62rem;
+  color: var(--gray-400);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  margin-left: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .seo-card-header { flex-direction: column; gap: 0.25rem; }
+  .kw-table { font-size: 0.75rem; }
+  .kw-table th, .kw-table td { padding: 0.5rem 0.65rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html" class="active">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 4 of 6</div>
+    <h1 class="doc-title">SEO Strategy &<br>Keyword Map</h1>
+    <p class="doc-subtitle">The keywords Muslims are already searching, how to show up for them, and the page-by-page SEO blueprint that turns search traffic into customers.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="doc-body">
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#why"><span class="toc-num">01</span> Why SEO Matters for Zim Zam</a></li>
+    <li><a href="#strategy"><span class="toc-num">02</span> The Three-Pillar Strategy</a></li>
+    <li><a href="#keywords"><span class="toc-num">03</span> Master Keyword Map</a></li>
+    <li><a href="#page-seo"><span class="toc-num">04</span> Page-by-Page SEO Blueprint</a></li>
+    <li><a href="#technical"><span class="toc-num">05</span> Technical SEO Essentials</a></li>
+    <li><a href="#aeo"><span class="toc-num">06</span> AI Answer Engine Optimization (AEO)</a></li>
+    <li><a href="#actions"><span class="toc-num">07</span> Implementation Checklist</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. WHY SEO ═══════════════════════ -->
+<section class="doc-section" id="why">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">Why SEO Matters for Zim Zam</h2>
+
+  <p>Right now, 100% of Zim Zam's traffic depends on Haqq posting on social media. That means every day he doesn't post, zero new people find the product. SEO changes that equation fundamentally — it creates a traffic source that works 24/7 whether Haqq posts or not.</p>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">The opportunity</div>
+    <p><strong>Thousands of Muslims search for Zamzam water information every month.</strong> Terms like "zamzam water benefits," "zamzam water minerals," and "is zamzam water safe" collectively represent significant monthly search volume — and no brand currently owns this content. The first brand to create comprehensive, trustworthy content around these terms will capture this traffic and be extremely difficult to displace.</p>
+  </div>
+
+  <h3>The SEO advantage of being first</h3>
+  <p>When nobody else is creating optimized content for a keyword, the first quality page to target it can rank on page one within weeks, not months. Most of the Zamzam water keyword space is currently dominated by academic papers, Wikipedia, and generic health sites — none of which are optimized for user experience or conversion. A well-built page from Zim Zam can outrank all of them.</p>
+</section>
+
+<!-- ═══════════════════════ 02. THREE PILLARS ═══════════════════════ -->
+<section class="doc-section" id="strategy">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">The Three-Pillar Strategy</h2>
+  <p class="section-intro">Zim Zam's SEO strategy targets three distinct keyword clusters, each serving a different purpose in the buyer journey.</p>
+
+  <h3>Pillar 1: Zamzam water education</h3>
+  <p><strong>Intent:</strong> Informational — Muslims searching to learn about Zamzam water's properties, benefits, and significance.</p>
+  <p><strong>Why it matters:</strong> This is the largest search volume cluster and the top of the funnel. People searching these terms don't know Zim Zam exists yet. The content educates them, then introduces the product as a natural next step.</p>
+  <p><strong>Pages serving this pillar:</strong> The Science of Zamzam (/zamzam-water-science), Blog posts.</p>
+
+  <h3>Pillar 2: Muslim wellness & Ramadan hydration</h3>
+  <p><strong>Intent:</strong> Informational + commercial — Muslims seeking practical health and hydration advice, especially during Ramadan.</p>
+  <p><strong>Why it matters:</strong> This cluster is highly seasonal (spikes dramatically during Ramadan) but also has year-round baseline volume. These are people actively looking for hydration solutions — and Zim Zam is one. The Halal Times recently published an article specifically about halal electrolytes for fasting, proving this content niche is emerging.</p>
+  <p><strong>Pages serving this pillar:</strong> How It Works (/how-it-works), Blog posts (Ramadan-focused).</p>
+
+  <h3>Pillar 3: Brand & product discovery</h3>
+  <p><strong>Intent:</strong> Navigational + transactional — people who've heard of Zim Zam and are searching specifically for it, or Muslims searching for halal mineral/electrolyte products.</p>
+  <p><strong>Why it matters:</strong> As social media awareness grows, branded search volume will increase. The site needs to rank #1 for its own name (currently it doesn't appear at all) and capture anyone searching for the product category.</p>
+  <p><strong>Pages serving this pillar:</strong> Homepage (/), Shop (/shop), FAQ (/faq).</p>
+
+  <div class="callout">
+    <div class="callout-title">How the three pillars work together</div>
+    <p>Pillar 1 (education) attracts the most people — they find Zim Zam through Zamzam water content and discover the product. Pillar 2 (wellness) catches people looking for solutions — Ramadan hydration, electrolyte guidance — and positions the product as an answer. Pillar 3 (brand) captures people who already know about Zim Zam and are ready to buy. Over time, as the blog and science content accumulate authority, all three pillars reinforce each other.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 03. KEYWORD MAP ═══════════════════════ -->
+<section class="doc-section" id="keywords">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Master Keyword Map</h2>
+  <p class="section-intro">Keywords organized by pillar, with estimated monthly search volume, competition level, and the page that should target each one. Volume estimates are based on search research and related query analysis — Ahrefs validation is recommended for precise numbers.</p>
+
+  <h3>Pillar 1: Zamzam Water Education</h3>
+  <div class="table-wrap">
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Est. Volume</th><th>Competition</th><th>Target Page</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="kw-keyword">zamzam water benefits</td><td class="kw-vol">5,000–10,000/mo</td><td><span class="tag tag-green">Low</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">zamzam water</td><td class="kw-vol">50,000+/mo</td><td><span class="tag tag-amber">Medium</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">zamzam water minerals</td><td class="kw-vol">500–1,500/mo</td><td><span class="tag tag-green">Low</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">what makes zamzam water special</td><td class="kw-vol">500–1,000/mo</td><td><span class="tag tag-green">Low</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">zamzam water composition</td><td class="kw-vol">200–500/mo</td><td><span class="tag tag-green">Low</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">is zamzam water safe</td><td class="kw-vol">500–1,000/mo</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">zamzam water mineral content</td><td class="kw-vol">200–500/mo</td><td><span class="tag tag-green">Low</span></td><td>/zamzam-water-science</td></tr>
+      <tr><td class="kw-keyword">zamzam water health benefits</td><td class="kw-vol">500–1,500/mo</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">zamzam water vs tap water</td><td class="kw-vol">100–300/mo</td><td><span class="tag tag-green">Very Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">zamzam water calcium</td><td class="kw-vol">100–200/mo</td><td><span class="tag tag-green">Very Low</span></td><td>/ingredients</td></tr>
+      <tr><td class="kw-keyword">zamzam well history</td><td class="kw-vol">1,000–3,000/mo</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">zamzam water hadith</td><td class="kw-vol">500–1,500/mo</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">zamzam water pH</td><td class="kw-vol">200–500/mo</td><td><span class="tag tag-green">Very Low</span></td><td>/zamzam-water-science</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>Pillar 2: Muslim Wellness & Ramadan Hydration</h3>
+  <div class="table-wrap">
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Est. Volume</th><th>Competition</th><th>Target Page</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="kw-keyword">ramadan hydration tips</td><td class="kw-vol">1,000–3,000/mo*</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">how to stay hydrated during ramadan</td><td class="kw-vol">1,000–3,000/mo*</td><td><span class="tag tag-amber">Medium</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">electrolytes for fasting</td><td class="kw-vol">500–1,500/mo</td><td><span class="tag tag-amber">Medium</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">halal electrolytes</td><td class="kw-vol">100–500/mo</td><td><span class="tag tag-green">Very Low</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">suhoor hydration</td><td class="kw-vol">200–500/mo*</td><td><span class="tag tag-green">Very Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">best drinks for suhoor</td><td class="kw-vol">500–1,500/mo*</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">dehydration during ramadan</td><td class="kw-vol">500–1,000/mo*</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">mineral water benefits</td><td class="kw-vol">3,000–5,000/mo</td><td><span class="tag tag-amber">Medium</span></td><td>Blog post</td></tr>
+      <tr><td class="kw-keyword">add minerals to water</td><td class="kw-vol">1,000–3,000/mo</td><td><span class="tag tag-amber">Medium</span></td><td>/how-it-works</td></tr>
+      <tr><td class="kw-keyword">islamic health tips</td><td class="kw-vol">200–500/mo</td><td><span class="tag tag-green">Low</span></td><td>Blog post</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:0.82rem;color:var(--muted);margin-top:-0.5rem;">*Seasonal keywords — volume spikes 5–10x during Ramadan (Feb–April depending on year). Plan content 4–6 weeks before Ramadan each year.</p>
+
+  <h3>Pillar 3: Brand & Product Discovery</h3>
+  <div class="table-wrap">
+  <table class="kw-table">
+    <thead>
+      <tr><th>Keyword</th><th>Est. Volume</th><th>Competition</th><th>Target Page</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="kw-keyword">zim zam labs</td><td class="kw-vol">Emerging</td><td><span class="tag tag-green">None</span></td><td>/ (Homepage)</td></tr>
+      <tr><td class="kw-keyword">zim zam mineral mix</td><td class="kw-vol">Emerging</td><td><span class="tag tag-green">None</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">zamzam water mineral blend</td><td class="kw-vol">0–50/mo</td><td><span class="tag tag-green">None</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">zamzam mineral supplement</td><td class="kw-vol">0–50/mo</td><td><span class="tag tag-green">None</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">halal mineral water supplement</td><td class="kw-vol">0–50/mo</td><td><span class="tag tag-green">None</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">buy zamzam water minerals</td><td class="kw-vol">0–50/mo</td><td><span class="tag tag-green">None</span></td><td>/shop</td></tr>
+      <tr><td class="kw-keyword">muslim owned wellness brand</td><td class="kw-vol">50–200/mo</td><td><span class="tag tag-green">Low</span></td><td>/our-story</td></tr>
+      <tr><td class="kw-keyword">haqq nation</td><td class="kw-vol">Emerging</td><td><span class="tag tag-green">None</span></td><td>/our-story</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="verdict verdict-insight">
+    <div class="verdict-label">Category Creation Opportunity</div>
+    <p><strong>The Pillar 3 keywords barely exist yet — and that's the point.</strong> "Zamzam mineral blend" and "zamzam water supplement" are terms that essentially nobody is searching for because the product category doesn't exist in people's minds. As Zim Zam creates content and social awareness, these searches will emerge. By owning the content now, the site will already be ranking when people start searching. This is how you create a category.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 04. PAGE SEO BLUEPRINT ═══════════════════════ -->
+<section class="doc-section" id="page-seo">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Page-by-Page SEO Blueprint</h2>
+  <p class="section-intro">Every page from the sitemap (Deliverable 3) gets a primary keyword, meta title, meta description, and H1 recommendation. These are the exact fields that need to be filled in when building each page.</p>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">Homepage</span>
+      <span class="seo-slug">/</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zim zam labs / zamzam mineral blend</p>
+    <p><strong>Secondary:</strong> zamzam water minerals, halal mineral supplement</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">Zim Zam Labs — The World's First Zamzam Mineral Blend<span class="seo-char-count">(55 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">A premium mineral mix that mirrors the unique composition of Zamzam water. Add it to any water, anywhere in the world. Muslim-owned. Every purchase helps families in Gaza.<span class="seo-char-count">(169 chars — trim to 155)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">The Blessings of Zamzam, in Every Glass</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">Our Story</span>
+      <span class="seo-slug">/our-story</span>
+    </div>
+    <p><strong>Primary keyword:</strong> haqq nation / zim zam labs founder</p>
+    <p><strong>Secondary:</strong> muslim owned wellness brand, revert muslim entrepreneur</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">Our Story — How a Revert Muslim Built Zim Zam Labs<span class="seo-char-count">(51 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">From discovering Zamzam water to recreating its mineral profile — the story behind Zim Zam Labs and founder Haqq Nation. Muslim-owned, purpose-driven.<span class="seo-char-count">(151 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">A Revert's Journey from Zamzam to Zim Zam</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">The Science of Zamzam</span>
+      <span class="seo-slug">/zamzam-water-science</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zamzam water minerals / zamzam water benefits</p>
+    <p><strong>Secondary:</strong> zamzam water composition, what makes zamzam water special, zamzam water mineral content, zamzam water pH</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">The Science of Zamzam Water: Minerals, Benefits & Composition<span class="seo-char-count">(61 chars — trim to 60)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">Zamzam water contains 25x more calcium than tap water. Explore the complete mineral profile, published research, and health benefits of the world's most unique water source.<span class="seo-char-count">(155 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">The Science Behind Zamzam: What Makes It Unlike Any Water on Earth</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">How It Works</span>
+      <span class="seo-slug">/how-it-works</span>
+    </div>
+    <p><strong>Primary keyword:</strong> add minerals to water / mineral water at home</p>
+    <p><strong>Secondary:</strong> how to use mineral drops, electrolyte water recipe, halal electrolytes</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">How Zim Zam Works — Turn Any Water Into Mineral Water<span class="seo-char-count">(53 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">Add a scoop of Zim Zam to any glass of water and transform it with the mineral profile of Zamzam. Simple to use, perfect for Ramadan, travel, and daily wellness.<span class="seo-char-count">(161 chars — trim to 155)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">How It Works: Zamzam Minerals in Three Simple Steps</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">Shop / Product Page</span>
+      <span class="seo-slug">/shop/premium-mineral-mix</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zamzam mineral blend / zim zam mineral mix</p>
+    <p><strong>Secondary:</strong> buy zamzam water minerals, halal mineral supplement, zamzam water supplement</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">Zim Zam Premium Mineral Mix — Mirrors Zamzam Water<span class="seo-char-count">(51 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">A premium blend of 6 minerals crafted to mirror Zamzam water's unique composition. Baja Sea Salt, calcium, magnesium, potassium & more. Just $10. Ships nationwide.<span class="seo-char-count">(155 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">Zim Zam Premium Mineral Mix</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">Our Ingredients</span>
+      <span class="seo-slug">/ingredients</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zamzam water calcium / zamzam mineral composition</p>
+    <p><strong>Secondary:</strong> baja sea salt minerals, magnesium glycinate benefits, calcium citrate supplement</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">Our Ingredients — What's Inside Zim Zam Mineral Mix<span class="seo-char-count">(52 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">6 premium ingredients chosen to mirror Zamzam water's mineral profile: Baja Sea Salt, Sodium Bicarbonate, Calcium Citrate, Magnesium Glycinate, Potassium Chloride & Magnesium Sulfate.<span class="seo-char-count">(trim to 155)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">What's Inside: 6 Ingredients, Each Chosen for a Reason</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">FAQ</span>
+      <span class="seo-slug">/faq</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zamzam mineral mix FAQ / is zim zam halal</p>
+    <p><strong>Secondary:</strong> is zamzam water safe to drink, zamzam water benefits islam</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">FAQ — Zim Zam Labs | Halal, Ingredients, Usage & More<span class="seo-char-count">(54 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">Common questions about Zim Zam Mineral Mix: Is it halal? How do I use it? Is it safe for kids? How is it different from actual Zamzam water? Get answers.<span class="seo-char-count">(152 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">Frequently Asked Questions</div></div>
+    </div>
+  </div>
+
+  <div class="seo-card">
+    <div class="seo-card-header">
+      <span class="seo-page-name">Blog Hub</span>
+      <span class="seo-slug">/blog</span>
+    </div>
+    <p><strong>Primary keyword:</strong> zamzam water blog / muslim wellness blog</p>
+    <div class="seo-meta">
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Title</div><div class="seo-meta-value meta-title">Blog — Zamzam Water Science, Muslim Wellness & Hydration<span class="seo-char-count">(57 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">Meta Description</div><div class="seo-meta-value meta-desc">Explore the science of Zamzam water, Ramadan hydration tips, mineral wellness, and more — from Zim Zam Labs founder Haqq Nation.<span class="seo-char-count">(128 chars)</span></div></div>
+      <div class="seo-meta-item"><div class="seo-meta-label">H1</div><div class="seo-meta-value">The Zim Zam Blog</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 05. TECHNICAL SEO ═══════════════════════ -->
+<section class="doc-section" id="technical">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">Technical SEO Essentials</h2>
+  <p class="section-intro">These are the behind-the-scenes requirements that make everything else work. Most are standard setup tasks that happen once during the site build.</p>
+
+  <h3>Day-one requirements</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Google Search Console:</strong> Set up and verify. Submit sitemap. This is how Google discovers the site exists.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Google Analytics 4:</strong> Install tracking. Set up conversion events for purchases, email signups, and "Shop Now" clicks.</li>
+    <li><span class="item-marker neutral">•</span> <strong>XML Sitemap:</strong> Auto-generated by whatever platform is chosen (Shopify does this automatically). Submit to Search Console.</li>
+    <li><span class="item-marker neutral">•</span> <strong>SSL certificate:</strong> Must be HTTPS. Any modern platform handles this.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Mobile-responsive:</strong> All pages must work on phones. 70%+ of the target audience is mobile.</li>
+  </ul>
+
+  <h3>On-page SEO checklist (every page)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker check">✓</span> <strong>One H1 per page</strong> — containing or closely related to the primary keyword.</li>
+    <li><span class="item-marker check">✓</span> <strong>Meta title under 60 characters</strong> — primary keyword + brand or value hook.</li>
+    <li><span class="item-marker check">✓</span> <strong>Meta description under 155 characters</strong> — compelling, includes a reason to click.</li>
+    <li><span class="item-marker check">✓</span> <strong>Proper heading hierarchy:</strong> H1 → H2 → H3. Never skip levels. Use headings for structure, not just visual sizing.</li>
+    <li><span class="item-marker check">✓</span> <strong>Image alt text on every image</strong> — descriptive, keyword-aware where natural. Not stuffed.</li>
+    <li><span class="item-marker check">✓</span> <strong>Internal links</strong> — every page links to at least 2–3 other pages on the site. This helps Google understand the site structure and helps visitors navigate.</li>
+    <li><span class="item-marker check">✓</span> <strong>Clean URL slugs</strong> — short, descriptive, hyphenated. No random strings or IDs.</li>
+  </ul>
+
+  <h3>Schema markup (structured data)</h3>
+  <p>Schema tells Google what kind of content each page contains, enabling rich results (star ratings, FAQ dropdowns, product prices in search results).</p>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Homepage:</strong> Organization schema (business name, logo, social links).</li>
+    <li><span class="item-marker neutral">•</span> <strong>Product page:</strong> Product schema (name, price, availability, reviews if available). This can display star ratings and pricing directly in Google search results.</li>
+    <li><span class="item-marker neutral">•</span> <strong>FAQ page:</strong> FAQPage schema. This enables expanded FAQ dropdowns in search results — significant real estate in Google.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Blog posts:</strong> Article schema (author, date published, date modified).</li>
+    <li><span class="item-marker neutral">•</span> <strong>Our Story:</strong> Person schema for Haqq Nation (name, description, social links, role).</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">Schema implementation note</div>
+    <p>Shopify supports schema markup through themes and apps. Many modern themes include Product and Article schema automatically. FAQ schema may require a free app or minor code addition. If Haqq stays on Square, schema is extremely limited — another reason platform migration matters.</p>
+  </div>
+
+  <h3>Page speed</h3>
+  <ul class="item-list">
+    <li><span class="item-marker green">•</span> Compress all images before upload. Use WebP format where possible.</li>
+    <li><span class="item-marker green">•</span> No more than 2–3 custom fonts loaded.</li>
+    <li><span class="item-marker green">•</span> Target: under 3 seconds load time on mobile. Shopify's infrastructure handles the heavy lifting here.</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════ 06. AEO ═══════════════════════ -->
+<section class="doc-section" id="aeo">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">AI Answer Engine Optimization (AEO)</h2>
+  <p class="section-intro">It's 2026. People don't just Google things anymore — they ask ChatGPT, Perplexity, Google AI Overviews, and Grok. Zim Zam should be structured so AI tools can find, trust, and cite it.</p>
+
+  <div class="verdict verdict-insight">
+    <div class="verdict-label">Why This Matters</div>
+    <p><strong>Imagine someone asks ChatGPT: "Can I get the benefits of Zamzam water without going to Mecca?"</strong> Right now, no AI can recommend Zim Zam because the site is invisible. With proper content structure, Zim Zam could be the answer AI tools cite. In a niche with zero competition, being the first well-structured, factual source means becoming the default answer.</p>
+  </div>
+
+  <h3>AEO content principles for Zim Zam</h3>
+  <ul class="item-list">
+    <li><span class="item-marker blue">•</span> <strong>Lead with facts, not fluff.</strong> AI models cite specific, verifiable claims. "Zamzam water contains 93 mg/L of calcium, roughly 25 times the concentration found in typical tap water" is citable. "Our amazing blend is super hydrating" is not.</li>
+    <li><span class="item-marker blue">•</span> <strong>Use clear question-and-answer formatting.</strong> Structure blog content and the FAQ page with explicit questions as H2/H3 headings followed by concise, factual answers. This is the format AI models prefer to extract from.</li>
+    <li><span class="item-marker blue">•</span> <strong>Cite published research.</strong> Reference the peer-reviewed studies on Zamzam water composition. AI models weight academically-sourced claims higher than marketing language.</li>
+    <li><span class="item-marker blue">•</span> <strong>Include entity-identifying statements.</strong> "Zim Zam Labs is a Muslim-owned brand that produces a premium mineral blend designed to mirror the chemical composition of Zamzam water." This sentence alone, if present on a crawlable, well-structured page, teaches AI models what the brand is.</li>
+    <li><span class="item-marker blue">•</span> <strong>Schema markup reinforces everything.</strong> Product schema, Organization schema, and FAQPage schema all make the site's content machine-readable.</li>
+  </ul>
+
+  <h3>The Science of Zamzam page as AEO anchor</h3>
+  <p>This page should be designed not just for human readers but as the definitive, citable resource on Zamzam water's mineral composition. If built correctly — with original data visualization, research citations, clear factual statements, and proper schema — it becomes the page that AI tools reference when anyone asks about Zamzam water minerals, benefits, or composition. In a niche where the current top sources are paywalled academic papers and Wikipedia, a well-structured brand page can become the default citation.</p>
+</section>
+
+<!-- ═══════════════════════ 07. IMPLEMENTATION ═══════════════════════ -->
+<section class="doc-section" id="actions">
+  <div class="section-num">Section 07</div>
+  <h2 class="section-title">Implementation Checklist</h2>
+  <p class="section-intro">A prioritized list of every SEO action item. The first group should happen at launch; the rest build over time.</p>
+
+  <h3>At launch (do these before going live)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> Set up Google Search Console and verify site ownership.</li>
+    <li><span class="item-marker num">2</span> Set up Google Analytics 4 with purchase conversion tracking.</li>
+    <li><span class="item-marker num">3</span> Enter meta titles and meta descriptions for all pages (use the blueprints in Section 4).</li>
+    <li><span class="item-marker num">4</span> Add alt text to every image on the site.</li>
+    <li><span class="item-marker num">5</span> Submit XML sitemap to Search Console.</li>
+    <li><span class="item-marker num">6</span> Ensure one H1 per page, proper heading hierarchy on all pages.</li>
+    <li><span class="item-marker num">7</span> Add internal links: every page links to at least 2–3 other pages.</li>
+    <li><span class="item-marker num">8</span> Implement Product schema on the shop page and FAQPage schema on /faq.</li>
+  </ul>
+
+  <h3>Within first month</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">9</span> Publish the Science of Zamzam page — the primary SEO asset.</li>
+    <li><span class="item-marker num">10</span> Publish first 2–3 blog posts targeting Pillar 1 and Pillar 2 keywords.</li>
+    <li><span class="item-marker neutral">•</span> Set up Google Business Profile (even for an online-only business, it helps).</li>
+    <li><span class="item-marker neutral">•</span> Submit site to Bing Webmaster Tools (covers Bing + DuckDuckGo).</li>
+  </ul>
+
+  <h3>Ongoing (monthly)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> Publish 2–4 blog posts per month (per the Blog Content Roadmap, Deliverable 5).</li>
+    <li><span class="item-marker neutral">•</span> Monitor Search Console for new keyword opportunities — what are people actually finding you for?</li>
+    <li><span class="item-marker neutral">•</span> Check Google Analytics for traffic trends and conversion rates.</li>
+    <li><span class="item-marker neutral">•</span> Update existing content with new data or improved information as needed.</li>
+    <li><span class="item-marker neutral">•</span> Build backlinks through Muslim community outreach, directory listings, and guest content.</li>
+  </ul>
+
+  <div class="summary-box">
+    <h3 class="section-title" >SEO Strategy Summary</h3>
+    <p><strong>Three pillars:</strong> Zamzam water education (high volume, top of funnel), Muslim wellness & Ramadan hydration (seasonal spike, solution-seeking), Brand & product discovery (growing with awareness).</p>
+    <p><strong>35+ keyword targets</strong> across 10 pages and the blog — up from zero keywords on zero indexable pages today.</p>
+    <p><strong>The biggest SEO asset:</strong> The Science of Zamzam page (/zamzam-water-science). This single page, done right, can rank for a cluster of Zamzam water keywords that collectively represent thousands of monthly searches — and nobody else is optimizing for them with a product conversion path.</p>
+    <p><strong>The secret weapon:</strong> Ramadan seasonality. Content published 4–6 weeks before Ramadan each year will spike in traffic exactly when Muslims are thinking about hydration, wellness, and faith. A blog post about Ramadan hydration tips published in January could be Zim Zam's highest-traffic page by March.</p>
+    <p style="margin-top:1rem;color:white;"><strong>Next up:</strong> Deliverable 5 (Blog Content Roadmap) maps out the exact posts to write, in what order, targeting which keywords — the execution plan for Pillars 1 and 2.</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="zimzam_sitemap_architecture.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">Sitemap & Architecture</span>
+  </a>
+  <a href="zimzam_blog_roadmap.html" class="next">
+    <span class="doc-nav-label">Next &rarr;</span>
+    <span class="doc-nav-title">Blog Roadmap</span>
+  </a>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

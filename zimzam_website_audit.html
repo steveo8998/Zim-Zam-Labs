@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Website Audit & Current State Assessment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── Audit: Inventory Table ── */
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.inventory-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+}
+
+.inventory-table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+.inventory-table tr:last-child td { border-bottom: none; }
+
+.score-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .inventory-table { font-size: 0.75rem; }
+  .inventory-table th, .inventory-table td { padding: 0.5rem 0.65rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html" class="active">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<!-- ════════════════════════════════════════ HEADER ════════════════════════════════════════ -->
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 1 of 6</div>
+    <h1 class="doc-title">Website Audit &<br>Current State Assessment</h1>
+    <p class="doc-subtitle">An honest, section-by-section analysis of zimzamlabs.com — what's working, what's not, and what Google (and your customers) actually see when they arrive.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>URL:</strong> zimzamlabs.com</div>
+      <div><strong>Platform:</strong> Square Online</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════ BODY ════════════════════════════════════════ -->
+<main class="doc-body">
+
+<!-- ── TOC ── -->
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#overall"><span class="toc-num">01</span> Overall Score & Summary</a></li>
+    <li><a href="#google"><span class="toc-num">02</span> What Google Sees (Search Visibility)</a></li>
+    <li><a href="#content"><span class="toc-num">03</span> Content & Messaging Audit</a></li>
+    <li><a href="#trust"><span class="toc-num">04</span> Trust, Credibility & Social Proof</a></li>
+    <li><a href="#design"><span class="toc-num">05</span> Design & Brand Consistency</a></li>
+    <li><a href="#conversion"><span class="toc-num">06</span> Conversion Path & User Experience</a></li>
+    <li><a href="#platform"><span class="toc-num">07</span> Platform Assessment (Square Online)</a></li>
+    <li><a href="#strengths"><span class="toc-num">08</span> What's Already Working</a></li>
+    <li><a href="#priority"><span class="toc-num">09</span> Priority Action Items</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. OVERALL SCORE ═══════════════════════ -->
+<section class="doc-section" id="overall">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">Overall Score & Summary</h2>
+  <p class="section-intro">We graded each dimension of the website on an A–F scale. These aren't meant to be discouraging — they're a starting point. Every issue here is fixable, and the product itself has a genuinely compelling story. The website just isn't telling it yet.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="score-grade grade-f">F</div>
+      <div class="score-label">Search Visibility</div>
+    </div>
+    <div class="stat-card">
+      <div class="score-grade grade-d">D</div>
+      <div class="score-label">Content & Messaging</div>
+    </div>
+    <div class="stat-card">
+      <div class="score-grade grade-f">F</div>
+      <div class="score-label">Trust & Social Proof</div>
+    </div>
+    <div class="stat-card">
+      <div class="score-grade grade-d">D+</div>
+      <div class="score-label">Design Consistency</div>
+    </div>
+    <div class="stat-card">
+      <div class="score-grade grade-d">D</div>
+      <div class="score-label">Conversion Path</div>
+    </div>
+    <div class="stat-card">
+      <div class="score-grade grade-d">D</div>
+      <div class="score-label">Platform Fit</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h3 class="section-title" >The Bottom Line</h3>
+    <p>Zim Zam Labs has a <strong>genuinely unique product</strong> with a <strong>deeply resonant story</strong> for its target audience — Muslims worldwide who have a spiritual connection to Zamzam water. That's the good news.</p>
+    <p>The bad news: <strong>the website is currently invisible to Google.</strong> Zero indexed pages means zero organic search traffic. The only way anyone finds this product right now is through Haqq Nation's social media channels or word of mouth. That's not a business — that's a side hustle dependent on one person's posting schedule.</p>
+    <p>The site also suffers from a messaging clarity problem. It reads like a supplement spec sheet when it should read like a <strong>story about faith, connection, and accessibility.</strong> The science is impressive, but it's buried in stock infographics and disconnected from the spiritual "why" that would actually move a Muslim buyer to purchase.</p>
+    <p>Every one of these problems is solvable. Let's walk through them.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 02. GOOGLE VISIBILITY ═══════════════════════ -->
+<section class="doc-section" id="google">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">What Google Sees (Search Visibility)</h2>
+  <p class="section-intro">This is the most critical finding. Right now, if someone Googles "zamzam water minerals" or "zamzam mineral blend" or even "zim zam labs" — your website does not appear. At all. Anywhere.</p>
+
+  <div class="verdict verdict-critical">
+    <div class="verdict-label">Critical Issue</div>
+    <p><strong>Zero Google indexing.</strong> A search for <code>site:zimzamlabs.com</code> returns no results. Google has either never crawled this site or cannot parse its content. This means 100% of traffic must come from social media, direct links, or paid ads. There is no passive discovery happening.</p>
+  </div>
+
+  <h3>Why this is happening</h3>
+  <ul class="item-list">
+    <li><span class="item-marker red">!</span> <strong>Square Online has limited SEO infrastructure.</strong> It generates minimal meta tags, doesn't support structured data (schema markup), and gives limited control over page titles, descriptions, heading hierarchy, and URL structure.</li>
+    <li><span class="item-marker red">!</span> <strong>The entire website is a single page.</strong> One page can only rank for one keyword cluster. You can't target "zamzam water benefits," "zamzam water minerals," "halal electrolyte," and "Muslim wellness products" all from the same URL. Each topic needs its own page.</li>
+    <li><span class="item-marker red">!</span> <strong>Key content is trapped in images.</strong> The research comparison table (Zamzam vs. mineral water vs. WHO standards), the sodium bicarbonate benefits graphic, the calcium citrate uses graphic, the magnesium glycinate benefits graphic, and the potassium functions graphic — Google cannot read any of these. To a search engine, those sections are blank.</li>
+    <li><span class="item-marker red">!</span> <strong>No blog, no content pages, no FAQ.</strong> There's nothing for Google to index beyond product information. Blog content is how small brands build organic traffic over time — especially in a niche with lots of searchable educational topics.</li>
+    <li><span class="item-marker amber">!</span> <strong>No Google Business Profile, no Google Search Console.</strong> Even basic free tools that tell Google "this business exists" haven't been set up.</li>
+  </ul>
+
+  <h3>What this means in plain English</h3>
+  <p>Imagine opening a shop in a mall but the door is invisible. People can only find you if a friend walks them there personally. That's the current situation. The website exists, but the internet doesn't know it's here.</p>
+
+  <div class="callout">
+    <div class="callout-title">Why this matters for Zim Zam specifically</div>
+    <p>There are thousands of Muslims searching for information about Zamzam water every single month — its mineral content, its health benefits, where to get it, whether it's safe. These are your exact potential customers, already searching. But they'll never find you because Google can't see your site. A content-driven SEO strategy turns that search volume into free, ongoing traffic.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 03. CONTENT & MESSAGING ═══════════════════════ -->
+<section class="doc-section" id="content">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Content & Messaging Audit</h2>
+  <p class="section-intro">The site currently reads like a supplement facts panel. The science is real — but the story, the soul, the reason a Muslim brother or sister should care about this product is missing from the page.</p>
+
+  <h3>Page-by-page content inventory</h3>
+
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>Section</th>
+        <th>What's There</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Hero</strong></td>
+        <td>"Worlds First Mineral Blend to Mimic ZamZam Water" + product photo + "Shop Now" CTA</td>
+        <td><span class="tag tag-amber">Weak</span></td>
+      </tr>
+      <tr>
+        <td><strong>Gaza Banner</strong></td>
+        <td>"EVERY PURCHASE HELPS FAMILIES IN GAZA" — scrolling ticker</td>
+        <td><span class="tag tag-amber">Needs Detail</span></td>
+      </tr>
+      <tr>
+        <td><strong>Science Table</strong></td>
+        <td>Academic research table comparing Zamzam water to mineral water and WHO standards</td>
+        <td><span class="tag tag-red">Problem</span></td>
+      </tr>
+      <tr>
+        <td><strong>Mineral Explainer</strong></td>
+        <td>"Blended to Mirror ZamZam's Unique Mineral Properties" + ingredient list</td>
+        <td><span class="tag tag-amber">Decent Copy</span></td>
+      </tr>
+      <tr>
+        <td><strong>Product Card</strong></td>
+        <td>Single product — Zim Zam Premium Mineral Mix, $10 (Ramadan sale $5)</td>
+        <td><span class="tag tag-amber">Minimal</span></td>
+      </tr>
+      <tr>
+        <td><strong>Baja Sea Salt</strong></td>
+        <td>Ingredient deep-dive with original photography + product shot</td>
+        <td><span class="tag tag-green">Solid</span></td>
+      </tr>
+      <tr>
+        <td><strong>Sodium Bicarbonate</strong></td>
+        <td>Ingredient deep-dive with third-party stock infographic</td>
+        <td><span class="tag tag-amber">Mixed</span></td>
+      </tr>
+      <tr>
+        <td><strong>Calcium Citrate</strong></td>
+        <td>Ingredient deep-dive with third-party stock infographic (Annexe Chem branding visible)</td>
+        <td><span class="tag tag-red">Problem</span></td>
+      </tr>
+      <tr>
+        <td><strong>Magnesium Glycinate</strong></td>
+        <td>Ingredient deep-dive with third-party stock infographic</td>
+        <td><span class="tag tag-amber">Mixed</span></td>
+      </tr>
+      <tr>
+        <td><strong>Potassium Chloride</strong></td>
+        <td>Ingredient deep-dive with third-party stock infographic</td>
+        <td><span class="tag tag-amber">Mixed</span></td>
+      </tr>
+      <tr>
+        <td><strong>Magnesium Sulfate</strong></td>
+        <td>Ingredient deep-dive with original crystal photography</td>
+        <td><span class="tag tag-green">Solid</span></td>
+      </tr>
+      <tr>
+        <td><strong>Founder Bio</strong></td>
+        <td>"Haqq Nation — Revert Muslim from America. Instagram/TikTok Influencer. Peak Performance Efficianado"</td>
+        <td><span class="tag tag-red">Too Thin</span></td>
+      </tr>
+      <tr>
+        <td><strong>Footer</strong></td>
+        <td>Email signup, social links (Instagram, TikTok, email), payment icons</td>
+        <td><span class="tag tag-blue">Fine</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Key messaging problems</h3>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Messaging Gap</div>
+    <p><strong>The spiritual "why" is almost completely absent.</strong> The homepage leads with "Premium Mineral Mix" — a supplement label. But people don't buy Zamzam water because of its mineral profile. They buy it because of its spiritual significance. The science validates the choice; the faith drives the purchase. The site has this backwards.</p>
+  </div>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Messaging Gap</div>
+    <p><strong>No usage instructions visible on the homepage.</strong> A first-time visitor has a basic question: "How do I use this?" How much do I add to water? How much water? How often? How many servings per bag? None of this is answered before the purchase decision.</p>
+  </div>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Messaging Gap</div>
+    <p><strong>"World's First" claim needs support.</strong> The hero says "Worlds First Mineral Blend to Mimic ZamZam Water" (missing the apostrophe in "World's"). This is a bold claim. If it's true, lean into it — explain the research journey, the development process, the testing. If it can't be substantiated, it's a liability.</p>
+  </div>
+
+  <div class="verdict verdict-critical">
+    <div class="verdict-label">Content Issue</div>
+    <p><strong>The research table appears to be copied directly from an academic paper.</strong> It's labeled "15-Table 1" with academic formatting. Using published research tables without attribution or permission is a copyright concern. More practically: it's an image, so Google can't read it, and it's nearly unreadable on mobile. This data should be rebuilt as original, branded content that tells the story in Zim Zam's own voice.</p>
+  </div>
+
+  <h3>Copy quality observations</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> The Baja Sea Salt and Magnesium Sulfate sections have the strongest copy on the site — original product photography and writing that connects the ingredient to the Zamzam mission. This should be the standard for all sections.</li>
+    <li><span class="item-marker neutral">•</span> The sodium bicarbonate, calcium citrate, magnesium glycinate, and potassium chloride sections all rely on third-party stock infographics that look pulled from Google Images. The Annexe Chem Pvt. Ltd. logo is visually prominent on the calcium citrate graphic. This undermines brand credibility.</li>
+    <li><span class="item-marker neutral">•</span> The ingredient sections all end with a "Shop now" button, creating six consecutive identical CTAs. This feels repetitive rather than persuasive.</li>
+    <li><span class="item-marker neutral">•</span> "Peak Performance Efficianado" in the founder bio has a spelling error — it should be "Aficionado." Small details like this erode trust on a site selling a health product.</li>
+    <li><span class="item-marker neutral">•</span> The Ramadan discount (&ldquo;$5 ALL RAMADAN!&rdquo;) is smart seasonal marketing for the audience, but the execution feels like a coupon banner rather than a celebration of the month. There's an opportunity to frame this more meaningfully.</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════ 04. TRUST ═══════════════════════ -->
+<section class="doc-section" id="trust">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Trust, Credibility & Social Proof</h2>
+  <p class="section-intro">This is where the biggest gap between the product's potential and the website's reality shows up. You're asking people to ingest something, and the site provides almost no trust signals.</p>
+
+  <div class="verdict verdict-critical">
+    <div class="verdict-label">Critical Gap</div>
+    <p><strong>Zero customer reviews or testimonials anywhere on the site.</strong> For a consumable health product, this is the single most important trust element missing. Even 3–5 genuine reviews would dramatically change the conversion dynamic.</p>
+  </div>
+
+  <h3>Trust signal inventory</h3>
+
+  <table class="inventory-table">
+    <thead>
+      <tr>
+        <th>Trust Signal</th>
+        <th>Present?</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customer reviews / testimonials</td>
+        <td><span class="tag tag-red">No</span></td>
+        <td>Nothing. Not even a single quote.</td>
+      </tr>
+      <tr>
+        <td>Lab testing / third-party verification</td>
+        <td><span class="tag tag-red">No</span></td>
+        <td>No mention of testing, lab results, or certifications.</td>
+      </tr>
+      <tr>
+        <td>FDA disclaimer</td>
+        <td><span class="tag tag-red">Not visible</span></td>
+        <td>Required for any supplement/mineral product making health claims.</td>
+      </tr>
+      <tr>
+        <td>Ingredient sourcing transparency</td>
+        <td><span class="tag tag-green">Partial</span></td>
+        <td>Baja Sea Salt sourcing story is good. Others have no sourcing detail.</td>
+      </tr>
+      <tr>
+        <td>Founder story / personal connection</td>
+        <td><span class="tag tag-red">Minimal</span></td>
+        <td>Three sentences. No origin story. No "why I made this."</td>
+      </tr>
+      <tr>
+        <td>Charity / cause details</td>
+        <td><span class="tag tag-amber">Vague</span></td>
+        <td>"Every purchase helps families in Gaza" — but no details on how, how much, or through which organization.</td>
+      </tr>
+      <tr>
+        <td>Contact information</td>
+        <td><span class="tag tag-red">No</span></td>
+        <td>No email, phone, or contact form visible.</td>
+      </tr>
+      <tr>
+        <td>Shipping / return policy</td>
+        <td><span class="tag tag-red">Not visible</span></td>
+        <td>Not found on the homepage. May exist on Square checkout but not accessible before purchase decision.</td>
+      </tr>
+      <tr>
+        <td>Social proof (followers, features, press)</td>
+        <td><span class="tag tag-amber">Implied</span></td>
+        <td>Bio mentions "Instagram/TikTok Influencer" but no follower counts, press mentions, or feature badges.</td>
+      </tr>
+      <tr>
+        <td>Halal certification</td>
+        <td><span class="tag tag-red">No</span></td>
+        <td>For a product marketed to Muslims, a halal certification or statement would build significant trust.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Why trust matters even more for this product</div>
+    <p>You're not selling a generic electrolyte — you're invoking the name and mineral profile of one of the most sacred water sources in Islam. Muslim consumers will hold this to a higher standard of authenticity and transparency than a random supplement. The website needs to earn that trust before asking for the sale. That means real reviews, real testing data, a real founder story, and complete transparency about what's in the bag and how it's made.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 05. DESIGN ═══════════════════════ -->
+<section class="doc-section" id="design">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">Design & Brand Consistency</h2>
+  <p class="section-intro">The site doesn't have a cohesive visual identity. Individual sections range from clean and premium (the hero, the Baja Sea Salt section) to visually jarring (stock infographics from other companies).</p>
+
+  <h3>Visual consistency issues</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Third-party infographics break the brand.</strong> The site uses infographic images from at least three different external sources — one with yellow/black branding, one with red Annexe Chem branding, and one with blue/teal medical icons. Each one introduces a foreign color palette and visual language that has nothing to do with Zim Zam's brand.</li>
+    <li><span class="item-marker neutral">•</span> <strong>The cyan/teal accent color is inconsistent.</strong> The logo droplet, the "Shop Now" hero button, and the footer background all use a bright cyan. The Ramadan sale banner also uses cyan. But this color isn't carried through the ingredient sections, creating a disconnected feel.</li>
+    <li><span class="item-marker neutral">•</span> <strong>No established typography system.</strong> The headline hierarchy feels arbitrary — some are bold serif, some are bold sans, some are uppercase, some aren't. A consistent type system would create visual rhythm.</li>
+    <li><span class="item-marker neutral">•</span> <strong>The product photography is decent but limited.</strong> The hero product shot (pouch + wooden spoon + crystals) is the strongest visual asset on the site. The Baja Sea Salt (glass bowl) and Magnesium Sulfate (wooden bowl) original photos are also good. But four of the six ingredient sections use stock images instead of original photography.</li>
+  </ul>
+
+  <h3>Mobile experience</h3>
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Concern</div>
+    <p><strong>The research comparison table is an image and will be illegible on phones.</strong> Given that the target audience (younger Muslims, influencer-following demographic) is heavily mobile, this is a significant content accessibility problem. Important data is being lost on the devices where most people are seeing it.</p>
+  </div>
+
+  <h3>What's working visually</h3>
+  <p>The hero section is clean and effective. The product photography has a warm, kitchen-counter aesthetic that feels approachable and real — not overly corporate. The wooden spoon and natural crystals communicate "artisanal" and "natural" without trying too hard. The founder photo is authentic and personable. These are assets to build on, not replace.</p>
+</section>
+
+<!-- ═══════════════════════ 06. CONVERSION ═══════════════════════ -->
+<section class="doc-section" id="conversion">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Conversion Path & User Experience</h2>
+  <p class="section-intro">The path from "landing on the site" to "buying the product" has friction points that are costing sales.</p>
+
+  <h3>The current conversion funnel</h3>
+  <p>Right now the journey is: <strong>Land on homepage → Scroll (a long time) → Click "Shop Now" → See one product → Buy.</strong> There's no warming-up, no objection handling, no social proof along the way, and no alternative paths for people who aren't ready to buy yet.</p>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Friction Point</div>
+    <p><strong>The homepage is extremely long with no navigation anchors.</strong> A visitor has to scroll through the hero, the Gaza banner, the science table, the mineral explainer, the product card, and six full ingredient deep-dives before reaching the founder bio. That's 10+ screen-heights of content with the same CTA ("Shop now") repeated seven times. There's no way to jump to sections, no sticky nav, and no clear content hierarchy.</p>
+  </div>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Friction Point</div>
+    <p><strong>No email capture strategy beyond the footer.</strong> The "Stay in the Loop" email signup is buried at the very bottom of the page. A visitor who's interested but not ready to buy has no low-commitment way to stay connected — no free guide, no recipe/usage PDF, no "Join the Ummah" community hook. They leave and may never come back.</p>
+  </div>
+
+  <div class="verdict verdict-warning">
+    <div class="verdict-label">Friction Point</div>
+    <p><strong>Only one product at one price point.</strong> There's no bundle, no multi-pack, no subscription, no starter kit, no sampler. One SKU at $10 (or $5 during Ramadan). For someone on the fence, there's no "try it small" option or "save by buying more" incentive. This limits both average order value and impulse purchasing.</p>
+  </div>
+
+  <h3>Missing conversion elements</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> No "How to Use" section before the purchase CTA — people don't know what they're buying into.</li>
+    <li><span class="item-marker neutral">•</span> No FAQ to handle objections ("Is this halal?" "How does it taste?" "How long does a bag last?" "Is it safe for kids?").</li>
+    <li><span class="item-marker neutral">•</span> No comparison to competing products or to buying actual bottled Zamzam water.</li>
+    <li><span class="item-marker neutral">•</span> No urgency mechanisms beyond the time-limited Ramadan sale.</li>
+    <li><span class="item-marker neutral">•</span> No cross-sell or upsell at checkout.</li>
+    <li><span class="item-marker neutral">•</span> Servings per bag not visible — a $10 bag that makes 100 glasses of water is incredible value; a $10 bag that makes 5 glasses is not. The site doesn't tell you which it is.</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════ 07. PLATFORM ═══════════════════════ -->
+<section class="doc-section" id="platform">
+  <div class="section-num">Section 07</div>
+  <h2 class="section-title">Platform Assessment: Square Online</h2>
+  <p class="section-intro">Square Online is a solid tool for what it does — simple e-commerce for businesses that primarily sell in person. But for a DTC brand that needs to be discovered online and grow through content, it has real limitations.</p>
+
+  <h3>Where Square works</h3>
+  <ul class="item-list">
+    <li><span class="item-marker check">✓</span> Easy to manage for a non-developer. No code required for basic updates.</li>
+    <li><span class="item-marker check">✓</span> Built-in payment processing (Haqq is already using this).</li>
+    <li><span class="item-marker check">✓</span> Handles basic product listing and checkout.</li>
+    <li><span class="item-marker check">✓</span> Low cost / free tier available.</li>
+  </ul>
+
+  <h3>Where Square falls short for Zim Zam's goals</h3>
+  <ul class="item-list">
+    <li><span class="item-marker red">!</span> <strong>SEO capabilities are severely limited.</strong> Minimal control over meta tags, heading structure, URL slugs, page titles, and structured data. You cannot build the kind of content-driven SEO strategy this brand needs on Square.</li>
+    <li><span class="item-marker red">!</span> <strong>No real blogging infrastructure.</strong> Square has a basic blog feature, but it lacks proper category/tag systems, RSS feeds, related post functionality, and the SEO controls needed for each post to rank.</li>
+    <li><span class="item-marker red">!</span> <strong>Limited page creation.</strong> Can't easily build the 8–12 page site architecture this brand needs (About, Science, How to Use, FAQ, Blog, etc.).</li>
+    <li><span class="item-marker red">!</span> <strong>No Google Tag Manager or advanced analytics support.</strong> Can't track what's working, where people drop off, or which content drives sales.</li>
+    <li><span class="item-marker amber">!</span> <strong>No structured data / schema markup.</strong> Can't tell Google "this is a product page" with price, availability, and reviews in a machine-readable format.</li>
+    <li><span class="item-marker amber">!</span> <strong>Design limitations.</strong> Template-constrained. Can't create the custom landing pages or brand storytelling experiences that build community.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">Platform recommendation preview</div>
+    <p>A detailed platform recommendation will be included in Deliverable 6. The short version: Shopify is likely the right move. It's still very manageable for a non-developer, has an app ecosystem for everything Haqq needs (reviews, email, subscriptions, bundles), excellent blogging and SEO capabilities, and the Muslim/faith-based DTC brand community on Shopify is active and growing. The migration from Square would be straightforward — there's only one product to move.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 08. STRENGTHS ═══════════════════════ -->
+<section class="doc-section" id="strengths">
+  <div class="section-num">Section 08</div>
+  <h2 class="section-title">What's Already Working</h2>
+  <p class="section-intro">This isn't all problems. Several things on the current site are genuine assets that should carry forward into whatever comes next.</p>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>The product concept is genuinely original and emotionally powerful.</strong> Recreating the mineral profile of Zamzam water so Muslims can experience those benefits anywhere in the world — this is a real, meaningful idea with an audience that has deep emotional investment. No competitor owns this positioning.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>The science is real.</strong> The ingredient selection is thoughtful and specific — Baja Sea Salt chosen for its mineral proximity to Zamzam, bioavailable magnesium forms, calcium citrate for absorption without food. This isn't a random electrolyte blend. The formulation story is credible and differentiating.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>The hero product photography is solid.</strong> The pouch + wooden spoon + crystal salt composition looks natural, warm, and premium. The Baja Sea Salt glass bowl and Magnesium Sulfate wooden bowl shots also work well. These original photos are the site's strongest visual assets.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>The Baja Sea Salt section is the template for all content.</strong> It has original photography, a specific sourcing story ("the only sea salt harvested without a single change, filler, or additive"), and a clear connection to the Zamzam mission. Every ingredient section should hit this standard.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>Built-in community cause alignment.</strong> "Every purchase helps families in Gaza" signals shared values with the target audience. With more specifics (how much, through which organization, impact stories), this becomes a powerful conversion driver.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>Founder has an existing social media presence.</strong> Haqq Nation is already building an audience on Instagram and TikTok. The website should be the hub that this social traffic flows into — right now there's a disconnect between the social channels driving awareness and the website capturing sales.</p>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Strength</div>
+    <p><strong>The $10 price point is extremely accessible.</strong> And the Ramadan $5 promotion shows smart seasonal thinking for the audience. A $10 entry price with proper value framing (cost per serving) could make this an easy impulse purchase.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 09. PRIORITY ACTIONS ═══════════════════════ -->
+<section class="doc-section" id="priority">
+  <div class="section-num">Section 09</div>
+  <h2 class="section-title">Priority Action Items</h2>
+  <p class="section-intro">Everything in this audit leads to a prioritized action plan. These are ranked by impact — what will move the needle most, soonest.</p>
+
+  <h3>Tier 1: Do these first (biggest impact)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> <strong>Expand the site from 1 page to 8–10 pages.</strong> Each page targets a different keyword cluster, tells a different part of the story, and serves a different stage of the buyer journey. (Covered in Deliverable 3: Recommended Sitemap.)</li>
+    <li><span class="item-marker num">2</span> <strong>Rewrite the homepage with faith-first, science-backed messaging.</strong> Lead with the spiritual connection to Zamzam water. Support with the mineral science. Integrate usage instructions, servings info, and social proof before the first "Buy" button.</li>
+    <li><span class="item-marker num">3</span> <strong>Get customer reviews on the site — immediately.</strong> Even 5 genuine reviews from early customers or friends who've used the product will fundamentally change the trust equation. This is the single highest-impact low-effort action available right now.</li>
+    <li><span class="item-marker num">4</span> <strong>Write a real founder story.</strong> Who is Haqq Nation? Why did he create this? What's his personal relationship with Zamzam water? When did he make his shahada? What problem was he solving for himself before he started solving it for others? This story is the brand's most powerful sales tool — and it's currently three sentences long.</li>
+  </ul>
+
+  <h3>Tier 2: Build the growth engine</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">5</span> <strong>Launch a blog targeting Zamzam water and Muslim wellness keywords.</strong> (Covered in Deliverable 5: Blog Content Roadmap.)</li>
+    <li><span class="item-marker num">6</span> <strong>Replace all third-party stock infographics with branded original content.</strong> Either original photography of each ingredient, or custom-designed graphics in Zim Zam's visual language.</li>
+    <li><span class="item-marker num">7</span> <strong>Rebuild the research comparison table as native, readable, mobile-friendly content.</strong> Keep the data — it's compelling. Just present it as branded, responsive web content instead of a screenshot from an academic paper.</li>
+    <li><span class="item-marker num">8</span> <strong>Implement SEO fundamentals.</strong> Meta titles, meta descriptions, heading hierarchy, image alt text, structured data. (Covered in Deliverable 4: SEO Strategy.)</li>
+  </ul>
+
+  <h3>Tier 3: Optimize and scale</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">9</span> <strong>Evaluate platform migration from Square to Shopify.</strong> (Covered in Deliverable 6: Platform Recommendation.)</li>
+    <li><span class="item-marker num">10</span> <strong>Build an email marketing system.</strong> Capture emails with a lead magnet (free guide to Zamzam water benefits, or a Ramadan hydration guide), then nurture with educational content and product offers.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Expand product line.</strong> Bundle options, subscription, travel size, Ramadan gift set — give people reasons to spend more and come back.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Set up analytics.</strong> Google Analytics 4, Google Search Console, and basic conversion tracking so Haqq can see what's working.</li>
+  </ul>
+
+  <div class="summary-box">
+    <h3 class="section-title" >What comes next</h3>
+    <p>This audit is Deliverable 1 of 6. The remaining deliverables will build on these findings:</p>
+    <p><strong>Deliverable 2:</strong> Competitive & Market Landscape — who's out there, where the whitespace is.</p>
+    <p><strong>Deliverable 3:</strong> Recommended Sitemap & Site Architecture — the blueprint for expansion.</p>
+    <p><strong>Deliverable 4:</strong> SEO Strategy & Keyword Map — what people are searching and how to show up.</p>
+    <p><strong>Deliverable 5:</strong> Blog Content Roadmap — the 12-month content engine.</p>
+    <p><strong>Deliverable 6:</strong> Platform Recommendation — Square vs. the alternatives.</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="index.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">Strategy Overview</span>
+  </a>
+  <a href="zimzam_competitive_landscape.html" class="next">
+    <span class="doc-nav-label">Next &rarr;</span>
+    <span class="doc-nav-title">Competitive Landscape</span>
+  </a>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

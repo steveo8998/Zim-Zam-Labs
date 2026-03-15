@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Recommended Sitemap & Site Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── Sitemap: Page Architecture Cards ── */
+.page-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.page-card:hover { border-color: var(--gray-300); }
+
+.page-card-header {
+  background: var(--gray-50);
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.page-slug {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  background: var(--accent-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.page-purpose {
+  padding: 0.85rem 1.15rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.page-details {
+  padding: 0.85rem 1.15rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+}
+
+.page-details p { margin-bottom: 0.4rem; }
+.page-details p:last-child { margin-bottom: 0; }
+
+.page-sections {
+  padding: 0.85rem 1.15rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.page-sections-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 0.5rem;
+}
+
+.section-list {
+  list-style: none;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.section-list li {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  background: var(--gray-50);
+}
+
+/* ── Sitemap: Navigation Mock ── */
+.nav-mock {
+  background: var(--ink);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-mock-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+
+.nav-item {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.nav-divider {
+  color: rgba(255,255,255,0.2);
+  font-size: 0.75rem;
+}
+
+/* ── Sitemap: Tree Visualization ── */
+.sitemap-tree {
+  background: var(--gray-50);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+  font-size: 0.82rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  overflow-x: auto;
+}
+
+.tree-root {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  font-size: 0.88rem;
+}
+
+.tree-l1 {
+  padding-left: 1.5rem;
+  margin: 0.3rem 0;
+  color: var(--gray-700);
+  position: relative;
+}
+
+.tree-l1::before {
+  content: '├─';
+  position: absolute;
+  left: 0;
+  color: var(--gray-300);
+}
+
+.tree-l2 {
+  padding-left: 3rem;
+  margin: 0.2rem 0;
+  color: var(--gray-500);
+  position: relative;
+}
+
+.tree-l2::before {
+  content: '│  ├─';
+  position: absolute;
+  left: 0.75rem;
+  color: var(--gray-300);
+}
+
+.tree-slug {
+  color: var(--accent);
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .page-card-header { flex-direction: column; gap: 0.25rem; }
+  .nav-mock { gap: 0.3rem; padding: 0.75rem 1rem; }
+  .sitemap-tree { padding: 1rem; font-size: 0.75rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html" class="active">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 3 of 6</div>
+    <h1 class="doc-title">Recommended Sitemap &<br>Site Architecture</h1>
+    <p class="doc-subtitle">The blueprint for expanding from a single homepage to a site that tells the full story, ranks on Google, and converts visitors into customers.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="doc-body">
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#overview"><span class="toc-num">01</span> Current State → Proposed State</a></li>
+    <li><a href="#sitemap"><span class="toc-num">02</span> Full Sitemap</a></li>
+    <li><a href="#nav"><span class="toc-num">03</span> Navigation Structure</a></li>
+    <li><a href="#pages"><span class="toc-num">04</span> Page-by-Page Blueprint</a></li>
+    <li><a href="#journey"><span class="toc-num">05</span> User Journey Mapping</a></li>
+    <li><a href="#priority"><span class="toc-num">06</span> Build Priority & Phasing</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. OVERVIEW ═══════════════════════ -->
+<section class="doc-section" id="overview">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">Current State → Proposed State</h2>
+
+  <h3>Current site: 2 pages</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Homepage</strong> — one extremely long page doing the work of six pages: hero, science, product, ingredients, founder, and footer. Google can only rank this for one keyword cluster.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Shop page</strong> — a single product listing linked from the homepage. Minimal product detail.</li>
+  </ul>
+
+  <h3>Proposed site: 10 pages + blog</h3>
+  <p>Each page has a distinct job, targets a specific keyword cluster, serves a specific stage of the buyer journey, and contributes to the overall story. No page tries to do everything. Together, they create a complete experience that educates, builds trust, and converts.</p>
+
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Why 10 pages?</div>
+    <p><strong>Each page is a new door into the business from Google.</strong> Right now there's one door and it's locked. Ten pages means ten keyword clusters, ten chances to rank, ten entry points for different types of searches. A visitor searching "zamzam water benefits" enters through a different door than someone searching "halal electrolyte" — but both paths lead to the product.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 02. SITEMAP ═══════════════════════ -->
+<section class="doc-section" id="sitemap">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">Full Sitemap</h2>
+
+  <div class="sitemap-tree">
+    <div class="tree-root">zimzamlabs.com</div>
+
+    <div class="tree-l1">├─ <strong>Homepage</strong> <span class="tree-slug">/</span></div>
+    <div class="tree-l1">├─ <strong>Our Story</strong> <span class="tree-slug">/our-story</span></div>
+    <div class="tree-l1">├─ <strong>The Science of Zamzam</strong> <span class="tree-slug">/zamzam-water-science</span></div>
+    <div class="tree-l1">├─ <strong>How It Works</strong> <span class="tree-slug">/how-it-works</span></div>
+    <div class="tree-l1">├─ <strong>Shop</strong> <span class="tree-slug">/shop</span></div>
+    <div class="tree-l2">│&emsp;&emsp;└─ Product: Zim Zam Premium Mineral Mix <span class="tree-slug">/shop/premium-mineral-mix</span></div>
+    <div class="tree-l1">├─ <strong>Our Ingredients</strong> <span class="tree-slug">/ingredients</span></div>
+    <div class="tree-l1">├─ <strong>Our Mission & Impact</strong> <span class="tree-slug">/mission</span></div>
+    <div class="tree-l1">├─ <strong>FAQ</strong> <span class="tree-slug">/faq</span></div>
+    <div class="tree-l1">├─ <strong>Blog</strong> <span class="tree-slug">/blog</span></div>
+    <div class="tree-l2">│&emsp;&emsp;└─ Individual posts <span class="tree-slug">/blog/post-title</span></div>
+    <div class="tree-l1">├─ <strong>Contact</strong> <span class="tree-slug">/contact</span></div>
+    <div class="tree-l1" style="color:var(--gray-400);">├─ Privacy Policy <span class="tree-slug">/privacy</span></div>
+    <div class="tree-l1" style="color:var(--gray-400);">├─ Terms of Service <span class="tree-slug">/terms</span></div>
+    <div class="tree-l1" style="color:var(--gray-400);">└─ Shipping & Returns <span class="tree-slug">/shipping</span></div>
+  </div>
+
+  <p>That's <strong>10 core pages</strong> (bolded above), plus the blog, plus 3 required legal/policy pages. The blog will grow over time with individual posts — each one another ranking opportunity.</p>
+</section>
+
+<!-- ═══════════════════════ 03. NAV ═══════════════════════ -->
+<section class="doc-section" id="nav">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Navigation Structure</h2>
+  <p class="section-intro">Clean, simple, and intuitive. Every page is reachable within two clicks. The primary nav keeps the most important paths front and center without overwhelming.</p>
+
+  <h3>Primary navigation (header)</h3>
+  <div class="nav-mock">
+    <div class="nav-mock-label">Main Nav</div>
+    <span class="nav-item active">Shop</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Our Story</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">The Science</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">How It Works</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Blog</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">FAQ</span>
+  </div>
+
+  <p>"Shop" stays first and visually differentiated (button style, not just text) because it's the primary conversion action. The remaining five items tell the story in sequence: who we are → the science → how to use it → learn more → common questions.</p>
+
+  <h3>Footer navigation</h3>
+  <div class="nav-mock">
+    <div class="nav-mock-label">Footer</div>
+    <span class="nav-item">Our Ingredients</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Our Mission</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Contact</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">FAQ</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Shipping & Returns</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Privacy</span>
+    <span class="nav-divider">·</span>
+    <span class="nav-item">Terms</span>
+  </div>
+
+  <p>Secondary pages (Ingredients, Mission, Contact, policies) live in the footer. They're accessible but don't clutter the main nav. The footer also includes email signup, social links (Instagram, TikTok), and the charitable impact badge.</p>
+
+  <div class="callout">
+    <div class="callout-title">Navigation principle</div>
+    <p>Keep the main nav to 6 items or fewer. Every item added to the primary nav dilutes the ones already there. The goal is to guide the visitor's eyes toward "Shop" and "Our Story" — the conversion and trust paths. Everything else supports those two.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 04. PAGE-BY-PAGE ═══════════════════════ -->
+<section class="doc-section" id="pages">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Page-by-Page Blueprint</h2>
+  <p class="section-intro">Each page below includes its purpose, what goes on it, and why it exists. These are the building blocks of a site that actually works for both humans and search engines.</p>
+
+  <!-- HOME -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">1. Homepage</span>
+      <span class="page-slug">/</span>
+    </div>
+    <div class="page-purpose">The front door. First impression. Tells the complete story in 60 seconds.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Introduce the brand, communicate the value proposition in one scroll, and route visitors to the right next step — whether that's "buy now," "learn more," or "read the story."</p>
+      <p><strong>Key difference from current site:</strong> Much shorter. The current homepage tries to be a science textbook, ingredient guide, product page, and founder bio all at once. The new homepage should be a highlight reel that links out to deeper pages for each topic.</p>
+      <p><strong>Primary CTA:</strong> Shop Now / Buy the Mineral Mix</p>
+      <p><strong>Secondary CTA:</strong> Learn the Science / Read Our Story</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Proposed sections (in scroll order)</div>
+      <ul class="section-list">
+        <li><strong>Hero:</strong> Faith-first headline (not "Premium Mineral Mix"), product photo, primary CTA. Subheadline connects Zamzam water to the product's purpose.</li>
+        <li><strong>Social proof bar:</strong> Customer count, star rating, or short testimonial quote. Even "Join 200+ Muslims who hydrate with Zim Zam" works early on.</li>
+        <li><strong>What is Zim Zam? (3 sentences):</strong> Brief explainer — what it is, what it does, who it's for. Link to /zamzam-water-science for the deep dive.</li>
+        <li><strong>How it works (3 steps):</strong> Visual step-by-step: Open → Add to water → Drink. Servings per bag, simple dosage. Link to /how-it-works.</li>
+        <li><strong>The Zamzam connection:</strong> 2–3 sentences on why Zamzam water is special. The mineral comparison stat (25x more calcium than tap water). Link to /zamzam-water-science.</li>
+        <li><strong>Featured product card:</strong> Product image, price, "Add to Cart" button, Ramadan/seasonal promo if active.</li>
+        <li><strong>Charitable impact callout:</strong> "Every purchase helps families in Gaza through [Organization]." Link to /mission.</li>
+        <li><strong>Founder snapshot:</strong> Haqq's photo, 2-sentence intro, "Read My Story" link to /our-story.</li>
+        <li><strong>Email capture:</strong> "Join the Ummah" or similar community-framed signup. Lead magnet if possible.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OUR STORY -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">2. Our Story</span>
+      <span class="page-slug">/our-story</span>
+    </div>
+    <div class="page-purpose">The emotional anchor of the entire brand. Builds trust and personal connection.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Tell Haqq's story — his reversion to Islam, his discovery of Zamzam water, the problem he wanted to solve, how he researched and developed the blend, and why he's building this for the Muslim community. This is the page people share. This is the page that converts skeptics.</p>
+      <p><strong>Why it matters:</strong> The audit found that the current founder bio is 3 sentences. Muslim consumers buy from people they trust, and trust comes from story. Every successful halal brand in the competitive analysis (Shifaa, Sunna Supplements) has a compelling founder story driving conversion.</p>
+      <p><strong>Primary CTA:</strong> Try the Mineral Mix (link to shop)</p>
+      <p><strong>Secondary CTA:</strong> Follow on Instagram / TikTok</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Proposed sections</div>
+      <ul class="section-list">
+        <li><strong>Hero:</strong> Haqq's photo (the keffiyeh photo from the current site is strong). Headline like "A Revert's Journey from Zamzam to Zim Zam."</li>
+        <li><strong>The reversion story:</strong> How Haqq came to Islam. This humanizes the brand and connects deeply with both revert and born Muslims.</li>
+        <li><strong>The Zamzam moment:</strong> First experience with Zamzam water. What it meant spiritually. The desire to access it more often.</li>
+        <li><strong>The research journey:</strong> How he studied the mineral profile. Why he chose each ingredient. The development process.</li>
+        <li><strong>The mission:</strong> Why he built a product, not just a personal solution. The vision for making Zamzam's mineral blessings accessible worldwide. Gaza giving component.</li>
+        <li><strong>Social links and community invitation.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SCIENCE -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">3. The Science of Zamzam</span>
+      <span class="page-slug">/zamzam-water-science</span>
+    </div>
+    <div class="page-purpose">The education and credibility page. Turns curiosity into conviction.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Explain what makes Zamzam water unique from a mineral science perspective. Present the research data in a compelling, accessible, mobile-friendly way. This is the page that answers "Is this real?" and "Why should I trust the science?"</p>
+      <p><strong>SEO role:</strong> This is the primary SEO page for Zamzam water-related keywords: "zamzam water minerals," "zamzam water benefits," "zamzam water composition," "what makes zamzam water special." These are terms Muslims are already searching — and no brand currently owns the content.</p>
+      <p><strong>Primary CTA:</strong> Try Zim Zam / Shop</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Proposed sections</div>
+      <ul class="section-list">
+        <li><strong>Hero:</strong> "What Makes Zamzam Water Unlike Any Water on Earth" or similar. Establish the spiritual and scientific significance.</li>
+        <li><strong>The mineral profile:</strong> Rebuild the academic comparison table as original branded content. Responsive, mobile-friendly, color-coded. Highlight the key differentiators: calcium (25x more than tap), sodium, potassium, sulfates, bicarbonates.</li>
+        <li><strong>What these minerals do for your body:</strong> Brief, plain-language explainer of each major mineral's health benefit. No stock infographics — original icons or photography.</li>
+        <li><strong>Published research references:</strong> Cite the actual studies (there are many peer-reviewed papers on Zamzam water composition). This builds E-E-A-T credibility and is citation-friendly for AI answer engines.</li>
+        <li><strong>How Zim Zam mirrors this profile:</strong> The bridge from "Zamzam water is amazing" to "here's how we recreated it." Links to /ingredients for the deep dive.</li>
+        <li><strong>CTA: Shop the Mineral Mix.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">4. How It Works</span>
+      <span class="page-slug">/how-it-works</span>
+    </div>
+    <div class="page-purpose">Removes the "I don't know what to do with this" objection. Practical and visual.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Show the customer exactly how to use the product. How much to add, to how much water, how it tastes, how often to use it, how many servings per bag. This information is completely absent from the current site and is a significant conversion blocker.</p>
+      <p><strong>Secondary role:</strong> Use-case inspiration. During Ramadan for suhoor/iftar hydration. Before/after workouts. Daily morning water ritual. Travel-friendly for Hajj/Umrah preparation.</p>
+      <p><strong>Primary CTA:</strong> Shop / Try It</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Proposed sections</div>
+      <ul class="section-list">
+        <li><strong>3-step visual:</strong> Open → Measure → Mix. Large, clear imagery or illustration. This should be instantly understandable.</li>
+        <li><strong>Dosage and details:</strong> Serving size, servings per bag, recommended water volume. Cost per serving calculation ($10 bag ÷ servings = amazing value).</li>
+        <li><strong>Taste profile:</strong> What to expect. "A clean, crisp mineral water with a slight mineral richness" or however Haqq describes it. This handles the "will it taste weird?" objection.</li>
+        <li><strong>Use cases:</strong> Ramadan hydration (suhoor/iftar), daily wellness ritual, pre/post exercise, travel (compact, TSA-friendly). Each with a short visual or scenario.</li>
+        <li><strong>Video embed:</strong> If Haqq has or can create a short video demonstrating usage, it belongs here. His TikTok/Instagram content could be repurposed.</li>
+        <li><strong>CTA: Shop the Mineral Mix.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SHOP -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">5. Shop / Product Page</span>
+      <span class="page-slug">/shop + /shop/premium-mineral-mix</span>
+    </div>
+    <div class="page-purpose">The conversion page. Everything leads here. Optimized to close the sale.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Sell the product. Every trust signal, social proof element, and objection-handler converges on this page. It should contain everything a visitor needs to go from "interested" to "bought" without leaving the page.</p>
+      <p><strong>Current gap:</strong> The existing shop page has a product name, a photo, and a price. It's missing reviews, usage info, serving details, ingredients list, FAQ, comparison, and any form of social proof.</p>
+      <p><strong>Future expansion:</strong> As the product line grows (bundles, subscriptions, travel sizes, Ramadan gift sets), the /shop page becomes a catalog. For now, it can route directly to the single product page.</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Product page must-haves</div>
+      <ul class="section-list">
+        <li><strong>Product photos:</strong> Multiple angles. The current pouch + spoon photo is good — add lifestyle shots (someone mixing it, glass of mineral water, Ramadan table setting).</li>
+        <li><strong>Price, quantity options, and Add to Cart.</strong> If bundles or subscriptions are added, show those tiers here.</li>
+        <li><strong>Servings per bag + cost per serving.</strong> This reframes the $10 price as incredible value.</li>
+        <li><strong>Ingredients list + "What's inside" summary.</strong> Links to /ingredients for deep dives.</li>
+        <li><strong>Customer reviews.</strong> This is the #1 most important element to add. Even 3–5 real reviews transform conversion.</li>
+        <li><strong>Quick FAQ accordion:</strong> "Is it halal?" "How does it taste?" "How many servings?" "Is it safe for kids?" "How is this different from actual Zamzam water?"</li>
+        <li><strong>Charitable impact badge.</strong> "This purchase feeds a family in Gaza."</li>
+        <li><strong>Shipping info and return policy.</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- INGREDIENTS -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">6. Our Ingredients</span>
+      <span class="page-slug">/ingredients</span>
+    </div>
+    <div class="page-purpose">The transparency page. Shows what's inside and why each ingredient was chosen.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Showcase all six ingredients with original photography and copy that connects each one back to the Zamzam mission. This is where the current site's Baja Sea Salt, Sodium Bicarbonate, Calcium Citrate, Magnesium Glycinate, Potassium Chloride, and Magnesium Sulfate sections move — off the homepage and onto their own dedicated page.</p>
+      <p><strong>Key improvement:</strong> Replace all third-party stock infographics with original photography or custom-designed branded graphics. The Annexe Chem and generic benefit graphics currently on the site need to go.</p>
+      <p><strong>Quality bar:</strong> The Baja Sea Salt section on the current site is the template — original photo, specific sourcing story, clear connection to Zamzam. Every ingredient should hit that standard.</p>
+      <p><strong>Primary CTA:</strong> Shop the Mineral Mix</p>
+    </div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">7. Our Mission & Impact</span>
+      <span class="page-slug">/mission</span>
+    </div>
+    <div class="page-purpose">The charitable giving and community impact page. Turns the Gaza banner into a real story.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Make the "Every Purchase Helps Families in Gaza" promise specific, transparent, and emotionally resonant. This page answers: how much is donated, through which organization, what kind of impact, and how can customers see the results.</p>
+      <p><strong>Why it matters:</strong> The competitive analysis found that Muslim consumers actively seek out brands with charitable missions — but only when those missions are specific and transparent. "Helps families in Gaza" is a start. "$2 from every bag provides a meal for a family in Gaza through [Organization Name]" is a conversion driver.</p>
+      <p><strong>Elements needed from Haqq:</strong> Which charity/organization? What percentage or dollar amount per sale? Any impact metrics or photos? Is this Zakat-eligible?</p>
+      <p><strong>Primary CTA:</strong> Shop (every purchase makes an impact)</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">8. FAQ</span>
+      <span class="page-slug">/faq</span>
+    </div>
+    <div class="page-purpose">The objection handler. Catches every question that might stop someone from buying.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Answer every common question a Muslim consumer would have before purchasing a mineral product. This page does double duty: it handles objections (driving conversion) and captures long-tail search traffic (SEO).</p>
+      <p><strong>SEO role:</strong> FAQ pages with proper FAQ schema markup can appear as rich results in Google. Each question is also a potential answer for AI engines like ChatGPT and Google AI Overviews.</p>
+      <p><strong>Primary CTA:</strong> Inline "Shop Now" buttons after key conversion-related answers.</p>
+    </div>
+    <div class="page-sections">
+      <div class="page-sections-title">Recommended FAQ categories</div>
+      <ul class="section-list">
+        <li><strong>Product basics:</strong> What is it? How do I use it? How many servings per bag? How does it taste? What's the shelf life?</li>
+        <li><strong>Faith & halal:</strong> Is this halal? Is this a replacement for Zamzam water? Can I make dua when drinking this? Is this bid'ah (innovation)? Addressing this category respectfully and directly is essential.</li>
+        <li><strong>Health & safety:</strong> Is it safe for children? Can I use it while fasting? Is it safe during pregnancy? Are there any side effects? Do you have lab testing results?</li>
+        <li><strong>Ordering & shipping:</strong> Where do you ship? How long does shipping take? What's your return policy?</li>
+        <li><strong>Ingredients & sourcing:</strong> Where are the ingredients from? Is it all-natural? Is there anything artificial?</li>
+        <li><strong>Charitable giving:</strong> How much goes to Gaza? Which organization? Is it Zakat-eligible?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOG -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">9. Blog</span>
+      <span class="page-slug">/blog</span>
+    </div>
+    <div class="page-purpose">The growth engine. Drives organic traffic, builds authority, educates the audience.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Publish educational content targeting keywords that Muslim consumers are searching. Each post serves as a new entry point from Google into the Zim Zam ecosystem. Over time, the blog becomes the primary traffic driver.</p>
+      <p><strong>Detailed content plan:</strong> Covered in Deliverable 5 (Blog Content Roadmap). This page is the hub — clean grid of posts with featured images, titles, dates, and brief excerpts.</p>
+      <p><strong>Author:</strong> Haqq Nation. Every post builds his personal authority and brand recognition.</p>
+      <p><strong>CTA per post:</strong> Inline "Try the Mineral Mix" CTAs within blog content where relevant.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page-card">
+    <div class="page-card-header">
+      <span class="page-name">10. Contact</span>
+      <span class="page-slug">/contact</span>
+    </div>
+    <div class="page-purpose">Trust signal + customer service. Shows there's a real person behind the brand.</div>
+    <div class="page-details">
+      <p><strong>Job:</strong> Give visitors a way to reach Haqq with questions, wholesale inquiries, press requests, or partnership ideas. The current site has no visible contact information — a trust concern for a consumable product.</p>
+      <p><strong>Elements:</strong> Contact form, email address, social media links. Consider separate pathways: "Customer Questions," "Wholesale / Retail Inquiries," "Press & Partnerships." Even if they all go to the same email, the segmentation signals legitimacy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 05. USER JOURNEY ═══════════════════════ -->
+<section class="doc-section" id="journey">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">User Journey Mapping</h2>
+  <p class="section-intro">Different visitors arrive with different intent. The site architecture should serve all of them without forcing everyone through the same path.</p>
+
+  <h3>Journey 1: The curious Muslim (discovery)</h3>
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Entry → Conversion</div>
+    <p><strong>How they arrive:</strong> Google search ("zamzam water benefits"), blog post share on social media, or Muslim community forum link.<br>
+    <strong>Path:</strong> Blog post or Science page → Homepage → Our Story → Shop → Purchase.<br>
+    <strong>What they need:</strong> Education first. They didn't know this product existed. The science page and blog content build awareness and credibility. The story page builds emotional connection. Then they buy.</p>
+  </div>
+
+  <h3>Journey 2: The social media follower (warm traffic)</h3>
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Entry → Conversion</div>
+    <p><strong>How they arrive:</strong> Haqq's Instagram Reel or TikTok video with a link in bio.<br>
+    <strong>Path:</strong> Homepage → How It Works → Shop → Purchase.<br>
+    <strong>What they need:</strong> They already know Haqq and trust him. They need the practical details: what does this product do, how do I use it, and how do I buy it. Short path to purchase.</p>
+  </div>
+
+  <h3>Journey 3: The gift buyer (Ramadan / Eid seasonal)</h3>
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Entry → Conversion</div>
+    <p><strong>How they arrive:</strong> "Muslim gifts Ramadan" search, gift guide roundup, or word of mouth.<br>
+    <strong>Path:</strong> Homepage or Blog ("Ramadan hydration guide") → Shop → Purchase.<br>
+    <strong>What they need:</strong> Quick understanding of what the product is, confidence it's a good gift, and an easy purchase flow. Future product expansion (gift sets, bundle packs) serves this journey especially well.</p>
+  </div>
+
+  <h3>Journey 4: The skeptic (needs convincing)</h3>
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Entry → Conversion</div>
+    <p><strong>How they arrive:</strong> Any entry point, but they're not ready to buy yet.<br>
+    <strong>Path:</strong> Science page → Ingredients → FAQ → Reviews (on product page) → Shop → Purchase.<br>
+    <strong>What they need:</strong> Proof. They want to see the research, understand the ingredients, read reviews, and get their faith-related questions answered before spending money. The FAQ page is critical for this journey.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">The email capture safety net</div>
+    <p>For any visitor who explores but doesn't buy, email capture is the safety net. A lead magnet ("Free Guide: The Mineral Science Behind Zamzam Water" or "Ramadan Hydration Tips") captures their email so Haqq can nurture them over time. This should appear on the homepage, at the end of blog posts, and as an exit-intent popup on the product page.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 06. BUILD PRIORITY ═══════════════════════ -->
+<section class="doc-section" id="priority">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Build Priority & Phasing</h2>
+  <p class="section-intro">Not everything needs to launch at once. Here's the recommended build order based on conversion impact.</p>
+
+  <h3>Phase 1: The essentials (launch with these)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> <strong>Homepage</strong> — redesigned per the blueprint above. Shorter, sharper, faith-first.</li>
+    <li><span class="item-marker num">2</span> <strong>Shop / Product Page</strong> — with reviews, servings info, quick FAQ, and charitable badge.</li>
+    <li><span class="item-marker num">3</span> <strong>Our Story</strong> — Haqq's full founder narrative. This is a conversion page disguised as a story page.</li>
+    <li><span class="item-marker num">4</span> <strong>How It Works</strong> — removes the biggest conversion blocker (people not knowing what to do with the product).</li>
+    <li><span class="item-marker num">5</span> <strong>FAQ</strong> — handles objections, especially the faith-related ones. Enables FAQ schema for Google.</li>
+  </ul>
+
+  <h3>Phase 2: Build authority (launch within 2–4 weeks)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">6</span> <strong>The Science of Zamzam</strong> — the primary SEO page. This starts attracting organic traffic.</li>
+    <li><span class="item-marker num">7</span> <strong>Our Ingredients</strong> — moves the ingredient deep-dives off the homepage. Replace stock graphics.</li>
+    <li><span class="item-marker num">8</span> <strong>Blog</strong> — launch with 2–3 posts from the content roadmap. Begin the SEO engine.</li>
+  </ul>
+
+  <h3>Phase 3: Complete the picture (within 1–2 months)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">9</span> <strong>Our Mission & Impact</strong> — once charitable specifics are confirmed.</li>
+    <li><span class="item-marker num">10</span> <strong>Contact</strong> — simple form page.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Policy pages</strong> — Privacy, Terms, Shipping & Returns.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Ongoing blog posts</strong> — per the content roadmap (Deliverable 5).</li>
+  </ul>
+
+  <div class="summary-box">
+    <h3 class="section-title" >Architecture Summary</h3>
+    <p><strong>Current state:</strong> 1 overloaded homepage + 1 bare product page = 2 pages, zero SEO.</p>
+    <p><strong>Proposed state:</strong> 10 focused pages + blog = multiple keyword targets, multiple entry points, multiple paths to conversion.</p>
+    <p><strong>Each page has one job.</strong> The homepage introduces. The story connects. The science convinces. The how-it-works page instructs. The product page sells. The FAQ overcomes objections. The blog attracts. The mission inspires. Together, they make a complete machine.</p>
+    <p style="margin-top:1rem;color:white;"><strong>Next up:</strong> Deliverable 4 (SEO Strategy & Keyword Map) assigns specific keyword targets, meta titles, and meta descriptions to each of these pages.</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="zimzam_competitive_landscape.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">Competitive Landscape</span>
+  </a>
+  <a href="zimzam_seo_strategy.html" class="next">
+    <span class="doc-nav-label">Next &rarr;</span>
+    <span class="doc-nav-title">SEO Strategy</span>
+  </a>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

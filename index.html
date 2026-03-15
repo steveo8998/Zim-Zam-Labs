@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Strategy Package</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* Index-specific styles */
+.hero {
+  background: var(--ink);
+  color: white;
+  padding: 4.5rem 1.5rem 3.5rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.hero-meta {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+
+.hero-meta strong {
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+
+.main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.intro {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.card-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+a.deliverable-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: all 0.2s;
+}
+
+a.deliverable-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(8,145,178,0.08);
+}
+
+.card-num {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 3rem 1.25rem 2.5rem; }
+  .main { padding: 2rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html" class="active">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Digital Strategy Package</div>
+    <h1 class="hero-title">Zim Zam Labs</h1>
+    <p class="hero-sub">A six-part strategy to take Zim Zam from invisible to discoverable — driving traffic, building trust, and converting Muslims worldwide into customers.</p>
+    <div class="hero-meta"><strong>Prepared by</strong> <span style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</span> &nbsp;&middot;&nbsp; <strong>Date</strong> <span style="color: var(--gold-light);">March 2026</span></div>
+  </div>
+</header>
+
+<main class="main">
+  <p class="intro">Each deliverable builds on the last. Start with the Website Audit and work your way through.</p>
+
+  <div class="card-grid">
+    <a class="deliverable-card" href="zimzam_website_audit.html">
+      <div class="card-num">Deliverable 01</div>
+      <div class="card-title">Website Audit & Current State Assessment</div>
+      <div class="card-desc">An honest, section-by-section analysis of zimzamlabs.com — what Google sees, what visitors see, and what needs to change. Includes a graded scorecard and prioritized action items.</div>
+    </a>
+
+    <a class="deliverable-card" href="zimzam_competitive_landscape.html">
+      <div class="card-num">Deliverable 02</div>
+      <div class="card-title">Competitive & Market Landscape</div>
+      <div class="card-desc">Who you're actually competing with, the $2.43 trillion Muslim consumer economy, and why the whitespace in this market is enormous.</div>
+    </a>
+
+    <a class="deliverable-card" href="zimzam_sitemap_architecture.html">
+      <div class="card-num">Deliverable 03</div>
+      <div class="card-title">Recommended Sitemap & Site Architecture</div>
+      <div class="card-desc">The blueprint for expanding from 2 pages to 10 — each one a new door from Google into the business. Page-by-page specs, navigation, and phased build priority.</div>
+    </a>
+
+    <a class="deliverable-card" href="zimzam_seo_strategy.html">
+      <div class="card-num">Deliverable 04</div>
+      <div class="card-title">SEO Strategy & Keyword Map</div>
+      <div class="card-desc">35+ keyword targets across three pillars. Page-by-page meta titles, descriptions, H1 recommendations, technical SEO checklist, and AI answer engine optimization.</div>
+    </a>
+
+    <a class="deliverable-card" href="zimzam_blog_roadmap.html">
+      <div class="card-num">Deliverable 05</div>
+      <div class="card-title">Blog Content Roadmap</div>
+      <div class="card-desc">30 blog posts mapped across 12 months — each a new organic traffic channel. Built around Ramadan seasonality with a 90-minute-per-post workflow.</div>
+    </a>
+
+    <a class="deliverable-card" href="zimzam_platform_recommendation.html">
+      <div class="card-num">Deliverable 06</div>
+      <div class="card-title">Platform Recommendation</div>
+      <div class="card-desc">Square Online vs. Shopify — a 14-category feature comparison, cost analysis, recommended apps, and a weekend migration checklist.</div>
+    </a>
+  </div>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Competitive & Market Landscape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── Competitive: Competitor Cards ── */
+.comp-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.comp-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.comp-card:hover { border-color: var(--gray-300); }
+
+.comp-card-header {
+  background: var(--gray-50);
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.comp-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.comp-url {
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.comp-details {
+  padding: 1rem 1.15rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--gray-600);
+}
+
+.comp-details p { margin-bottom: 0.5rem; }
+.comp-details p:last-child { margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .comp-card-header { flex-direction: column; gap: 0.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html" class="active">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 2 of 6</div>
+    <h1 class="doc-title">Competitive &<br>Market Landscape</h1>
+    <p class="doc-subtitle">Who's out there, who you're actually competing with (it's not who you think), and why the whitespace in this market is enormous.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="doc-body">
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#tldr"><span class="toc-num">01</span> The Big Picture</a></li>
+    <li><a href="#market"><span class="toc-num">02</span> The Muslim Consumer Market</a></li>
+    <li><a href="#direct"><span class="toc-num">03</span> Direct Competitors (Zamzam Mineral Recreation)</a></li>
+    <li><a href="#zamzam"><span class="toc-num">04</span> Zamzam Water Sellers (The Alternative, Not the Competition)</a></li>
+    <li><a href="#halal"><span class="toc-num">05</span> Halal Supplement & Wellness Brands</a></li>
+    <li><a href="#mainstream"><span class="toc-num">06</span> Mainstream Electrolyte Brands (Not Your Lane)</a></li>
+    <li><a href="#giveback"><span class="toc-num">07</span> The "Buy Muslim, Give Back" Movement</a></li>
+    <li><a href="#whitespace"><span class="toc-num">08</span> The Whitespace: Where Zim Zam Wins</a></li>
+    <li><a href="#positioning"><span class="toc-num">09</span> Positioning Recommendations</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. BIG PICTURE ═══════════════════════ -->
+<section class="doc-section" id="tldr">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">The Big Picture</h2>
+
+  <div class="summary-box">
+    <h3 class="section-title" >Zim Zam has no direct competitors.</h3>
+    <p>We searched extensively for anyone else recreating the mineral profile of Zamzam water as a consumer product. <strong>We found nobody.</strong> There are companies selling actual bottled Zamzam water imported from Saudi Arabia. There are halal vitamin and supplement brands. There are mainstream electrolyte products. But nobody is doing what Zim Zam is doing: engineering an artisanal mineral blend that mirrors the unique chemical composition of Zamzam water.</p>
+    <p>This means two things: first, the "World's First" claim on the homepage may actually be true — which is a massive differentiator. Second, the competitive threat isn't another brand doing the same thing. <strong>The real competition is obscurity.</strong> The biggest risk is that Muslims who would love this product never discover it exists.</p>
+  </div>
+
+  <p>The competitive landscape for Zim Zam doesn't look like a typical product category analysis. Instead of one lane with competitors jockeying for position, Haqq is operating at the intersection of four different markets — and nobody else is standing at that exact crossroads.</p>
+</section>
+
+<!-- ═══════════════════════ 02. MARKET SIZE ═══════════════════════ -->
+<section class="doc-section" id="market">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">The Muslim Consumer Market</h2>
+  <p class="section-intro">Before we look at competitors, let's understand the size of the opportunity. The Muslim consumer economy is one of the fastest-growing market segments in the world — and the U.S. piece alone is substantial.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">$2.43T</div>
+      <div class="stat-label">Global Muslim consumer spending (2023)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$186B</div>
+      <div class="stat-label">North American Muslim annual consumer spending</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3.5M+</div>
+      <div class="stat-label">Muslims in the United States</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">$3.36T</div>
+      <div class="stat-label">Projected Muslim spending by 2028</div>
+    </div>
+  </div>
+
+  <div class="verdict verdict-insight">
+    <div class="verdict-label">Key Trend</div>
+    <p><strong>Values-driven consumer activism is surging.</strong> The 2024/25 State of the Global Islamic Economy report found that 15.6% of global Muslim online conversations actively endorse ethical, alternative brands — driven by faith-based values and global solidarity movements. Muslim consumers are actively choosing to buy from Muslim-owned brands, especially those that give back. This is the exact wave Zim Zam should be riding.</p>
+  </div>
+
+  <p>The halal pharmaceutical and supplement sector specifically is growing at 6.8% annually, projected to reach significant scale by 2028. Muslim consumers are seeking out products that align with their faith across every category — not just food. The demand for halal-certified, Muslim-owned wellness products is outpacing supply, particularly in the U.S. market.</p>
+
+  <div class="callout">
+    <div class="callout-title">What this means for Zim Zam</div>
+    <p>Haqq doesn't need to convince the market to care about halal, Muslim-owned, or faith-aligned products. That demand already exists and is growing fast. He needs to make his product discoverable within a community that's already looking for exactly this kind of brand.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 03. DIRECT COMPETITORS ═══════════════════════ -->
+<section class="doc-section" id="direct">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Direct Competitors: Zamzam Mineral Recreation</h2>
+  <p class="section-intro">We searched for brands recreating, mimicking, or approximating the mineral profile of Zamzam water as a consumable product. Here's what we found.</p>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Finding</div>
+    <p><strong>Zero direct competitors identified.</strong> No brand, product, or company is currently marketing a mineral blend specifically designed to mirror the chemical composition of Zamzam water. Zim Zam Labs appears to be genuinely first-to-market in this category.</p>
+  </div>
+
+  <p>This is rare. In most product categories, even niche ones, there are at least a handful of competitors. The complete absence of direct competition suggests either that nobody has thought of this before (unlikely), or that nobody has executed on it at scale (more likely). Either way, it means Zim Zam has a first-mover advantage — but only if it moves fast enough to establish the category before someone else does.</p>
+
+  <h3>Why this matters strategically</h3>
+  <p>Being first to market in a category is an enormous advantage, but only if you also become the first brand people associate with the category. Right now, if someone searches "zamzam mineral blend" or "zamzam water minerals supplement," nothing comes up. The first brand to create content around these terms will own them, potentially for years. This is one of the strongest arguments for an aggressive content and SEO strategy — it's not just about growth, it's about category ownership.</p>
+</section>
+
+<!-- ═══════════════════════ 04. ZAMZAM WATER SELLERS ═══════════════════════ -->
+<section class="doc-section" id="zamzam">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Zamzam Water Sellers: The Alternative, Not the Competition</h2>
+  <p class="section-intro">These are companies importing and selling actual bottled Zamzam water from Saudi Arabia. They serve the same audience but with a fundamentally different product — and a fundamentally different set of limitations.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Zamzam Water Store</div>
+          <div class="comp-url">zamzamwaterstore.com</div>
+        </div>
+        <span class="tag tag-amber">Alt. Product</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Authentic 5L bottles of Zamzam water imported from Saudi Arabia. Positioned as the leading U.S. supplier with 3+ years of operation.</p>
+        <p><strong>Pricing:</strong> 5L bottle + $29.99 shipping. Total cost $50–80+ per gallon. Each bottle weighs 11 lbs.</p>
+        <p><strong>Limitations:</strong> Expensive, heavy, finite supply, authenticity concerns (a known industry-wide issue), and once it's gone, it's gone.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Zamzam Water USA</div>
+          <div class="comp-url">zamzamwaterusa.com</div>
+        </div>
+        <span class="tag tag-amber">Alt. Product</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> 5L bottles of Zamzam water. U.S. shipping only. Non-refundable purchases.</p>
+        <p><strong>Pricing:</strong> $29.99 shipping per bottle. Products appear to run $50–100+.</p>
+        <p><strong>Limitations:</strong> Small operation, limited product info, no-refund policy may deter first-time buyers.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Amazon Zamzam Sellers</div>
+          <div class="comp-url">amazon.com (multiple sellers)</div>
+        </div>
+        <span class="tag tag-amber">Alt. Product</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> 500ml jars ($15), 16.5oz 12-packs ($40–60), 5L bottles ($75–100). Multiple sellers with varying authenticity claims.</p>
+        <p><strong>Volume:</strong> The 500ml jar listing shows "50+ bought in past month" — evidence of consistent demand.</p>
+        <p><strong>Limitations:</strong> Authenticity is the #1 concern in reviews. Saudi Arabia restricts commercial export of Zamzam water, making every claim of authenticity questionable.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">eBay Zamzam Market</div>
+          <div class="comp-url">ebay.com</div>
+        </div>
+        <span class="tag tag-amber">Alt. Product</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> 5L bottles ranging from $75 to $100+. Multiple sellers, variable shipping costs, mixed authenticity.</p>
+        <p><strong>Notable:</strong> Active market with regular sales, suggesting persistent demand from Muslim consumers seeking Zamzam water in the U.S.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Burdaclothing / Islamic Retail Stores</div>
+          <div class="comp-url">Various</div>
+        </div>
+        <span class="tag tag-amber">Alt. Product</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Islamic clothing stores and general Muslim retailers often carry Zamzam water as an add-on product. Non-refundable.</p>
+        <p><strong>Notable:</strong> Demonstrates that Zamzam water is a cross-category product — Muslim consumers look for it alongside prayer rugs, Qurans, and Islamic goods.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict verdict-insight">
+    <div class="verdict-label">Strategic Insight</div>
+    <p><strong>Zamzam water sellers validate the demand — and expose Zim Zam's value proposition.</strong> Muslims in America are willing to pay $50–100 for a single gallon of Zamzam water that's heavy to ship, finite in quantity, and of uncertain authenticity. A $10 mineral blend that recreates those same mineral properties and can be used repeatedly is a fundamentally better value. But the website never makes this comparison. This should be central to the sales pitch.</p>
+  </div>
+
+  <h3>The authenticity angle</h3>
+  <p>Saudi Arabia restricts commercial export of Zamzam water. The Quran Store, a major Islamic retailer, explicitly states that retail Zamzam water sales are restricted to within Saudi Arabia. This means every U.S. seller claiming to ship "authentic" Zamzam water operates in a gray area. Zim Zam doesn't have this problem — it's transparent about being a mineral recreation, not the actual sacred water. That honesty is a trust-builder, not a weakness, and should be framed as such.</p>
+</section>
+
+<!-- ═══════════════════════ 05. HALAL SUPPLEMENT BRANDS ═══════════════════════ -->
+<section class="doc-section" id="halal">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">Halal Supplement & Wellness Brands</h2>
+  <p class="section-intro">These are Muslim-owned and halal-certified brands selling vitamins, supplements, and wellness products to Muslim consumers. They serve the same audience and understand the same buyer psychology — but none of them sell a product like Zim Zam's.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Noor Vitamins</div>
+          <div class="comp-url">noorvitamins.com</div>
+        </div>
+        <span class="tag tag-blue">Same Audience</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Full line of halal-certified vitamins and multivitamins. One of the most established Muslim supplement brands in the U.S. — over a decade in business.</p>
+        <p><strong>What they do well:</strong> Strong Amazon presence, halal certification front-and-center, professional branding, blog content, community education. Have earned doctor endorsements (Dr. Dina Issa).</p>
+        <p><strong>What Zim Zam can learn:</strong> Halal certification as a trust signal. Professional product photography. Doctor/expert endorsements. Multi-channel presence (own site + Amazon).</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Shifaa Nutrition</div>
+          <div class="comp-url">shifaanutrition.com</div>
+        </div>
+        <span class="tag tag-blue">Same Audience</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Halal-certified vitamins, collagen, omega-3, and kids' supplements. Strong founder story — built because existing brands didn't meet real halal standards.</p>
+        <p><strong>What they do well:</strong> Authentic founding narrative that resonates with Muslim consumers. Reviews in the voice of the community (phrases like "Insha'Allah" and "Alhamdulillah" in reviews). Claims of facility-level halal certification, not just ingredient-level.</p>
+        <p><strong>What Zim Zam can learn:</strong> The power of the founder story as a conversion driver. Speaking the community's language authentically. Certification at the facility level builds deeper trust.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Sunna Supplements</div>
+          <div class="comp-url">sunnasupplements.com</div>
+        </div>
+        <span class="tag tag-blue">Same Audience</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Halal collagen, vitamins, and wellness supplements with strong before/after social proof.</p>
+        <p><strong>What they do well:</strong> Heavy use of user-generated before/after photos as social proof. Community-building language ("SS family"). Transparent about charging more for quality: their founder explicitly says they won't sell "artificial junk." Third-party testing prominently displayed.</p>
+        <p><strong>What Zim Zam can learn:</strong> Customer photo testimonials as the most powerful form of social proof. Premium pricing justified through quality messaging. Third-party testing as a non-negotiable trust signal.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Salaam Nutritionals</div>
+          <div class="comp-url">salaamnutritionals.com</div>
+        </div>
+        <span class="tag tag-blue">Same Audience</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Halal gummy vitamins, collagen, fish oil, probiotics. Dual halal + kosher certified.</p>
+        <p><strong>What they do well:</strong> The only vitamin brand with both halal and kosher certification — widening the addressable market. Clean, approachable branding. Educational tone. Small-batch production positioned as a quality signal.</p>
+        <p><strong>What Zim Zam can learn:</strong> Small-batch as a quality/premium signal. Dual certification to expand audience beyond Muslims to kosher consumers.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Zaytun Vitamins, Iman Vitamins, Halalways</div>
+          <div class="comp-url">Various</div>
+        </div>
+        <span class="tag tag-blue">Same Audience</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>What they sell:</strong> Various halal-certified vitamins and supplements. Multiple brands competing in the halal multivitamin space specifically.</p>
+        <p><strong>Notable trend:</strong> The crowding of the halal <em>vitamin</em> market proves the demand is real — brands are multiplying because Muslim consumers are actively buying. But the mineral/electrolyte/hydration niche within this market is completely empty.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Key Takeaway</div>
+    <p><strong>The halal supplement market is proven and growing — but nobody is in the mineral/electrolyte/hydration space.</strong> There are 6+ brands competing for halal vitamins and multivitamins, but zero brands serving the halal mineral hydration niche. Zim Zam occupies a category of one within a validated market.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 06. MAINSTREAM ═══════════════════════ -->
+<section class="doc-section" id="mainstream">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Mainstream Electrolyte Brands: Not Your Lane</h2>
+  <p class="section-intro">We're including these for context — not because they're competitors. Haqq is right: he's not competing with these brands. But understanding them helps sharpen what makes Zim Zam different.</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">LMNT, Liquid I.V., Nuun, Drip Drop</div>
+        </div>
+        <span class="tag tag-purple">Different Lane</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>Their audience:</strong> Fitness enthusiasts, athletes, keto/fasting dieters, biohackers. Marketing is performance-focused, science-bro energy, Instagram fitness culture.</p>
+        <p><strong>Why they don't matter:</strong> Their branding, messaging, and audience have zero overlap with Muslim consumers seeking a faith-connected hydration product. A Muslim buying Zim Zam isn't choosing between Zim Zam and LMNT — they're choosing between Zim Zam and nothing.</p>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-card-header">
+        <div>
+          <div class="comp-name">Buoy, SALTT, LyteShow, Trace Minerals</div>
+        </div>
+        <span class="tag tag-purple">Different Lane</span>
+      </div>
+      <div class="comp-details">
+        <p><strong>Their format:</strong> Liquid drops and concentrates — the closest product format to Zim Zam's "add to water" concept. Several use Great Salt Lake minerals.</p>
+        <p><strong>Why they're useful as references:</strong> Their website structure, content strategy, and product education approaches are worth studying. SALTT in particular has excellent messaging about <em>why</em> electrolytes matter beyond sports. Buoy has strong clinical proof claims. These brands show how to educate consumers about mineral supplements — but through a secular, health-science lens. Zim Zam needs to do the same education but through a faith-and-wellness lens.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">One thing the mainstream brands do better</div>
+    <p>Every single mainstream electrolyte brand — from LMNT to Buoy to SALTT — leads with <em>education</em>. They teach their audience why electrolytes matter, how dehydration works, what happens when your minerals are low. Their blogs, social content, and website copy are educational-first, product-second. Zim Zam needs to do this exact same thing but for its audience: teach Muslims about the mineral science behind Zamzam water, the health benefits of proper mineral balance, and how hydration connects to wellness and worship. The product sells itself once people understand the "why."</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 07. GIVE-BACK MOVEMENT ═══════════════════════ -->
+<section class="doc-section" id="giveback">
+  <div class="section-num">Section 07</div>
+  <h2 class="section-title">The "Buy Muslim, Give Back" Movement</h2>
+  <p class="section-intro">This isn't a competitor category — it's the cultural tailwind that makes Zim Zam's timing perfect. A significant movement among Muslim consumers (and allies) is actively seeking out Muslim-owned businesses that donate to humanitarian causes, especially in Palestine.</p>
+
+  <h3>What's happening</h3>
+  <p>Since October 2023, Muslim consumer activism has accelerated dramatically. Organizations like UMMA Foundation, Palestine Children's Relief Fund (PCRF), Islamic Relief USA, and MATW Project have seen surges in support. Multiple curated directories now list Muslim-owned and Palestine-supporting brands, and Muslim consumers are actively redirecting their spending toward these businesses.</p>
+
+  <p>Brands like PaliRoots (donates a meal per order), KUVRD (meal distribution through Human Concern International), and Olive Root Apparel (15% of proceeds to PCRF) have built loyal followings by combining product quality with a charitable mission. The pattern is clear: Muslim consumers don't just tolerate the give-back model — they actively seek it out and reward it with loyalty.</p>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Zim Zam Alignment</div>
+    <p><strong>Haqq's "Every Purchase Helps Families in Gaza" banner positions Zim Zam perfectly within this movement.</strong> But currently it's a banner — not a story. The charitable component needs specifics to become a conversion driver: which organization, what percentage, what impact. "Every purchase helps families in Gaza" is a start. "$2 from every bag feeds a family in Gaza through [Organization Name]" is a sale.</p>
+  </div>
+
+  <h3>The opportunity</h3>
+  <p>Zim Zam could get listed in Muslim-owned business directories, Gaza-supporting brand roundups, and Ramadan shopping guides — all of which are actively maintained and shared across Muslim social media. These are free distribution channels that Haqq isn't leveraging yet. A brand that combines spiritual connection (Zamzam water), health benefits (mineral science), Muslim ownership (Haqq's story as a revert), and humanitarian impact (Gaza donations) hits every trigger point for this consumer base.</p>
+</section>
+
+<!-- ═══════════════════════ 08. WHITESPACE ═══════════════════════ -->
+<section class="doc-section" id="whitespace">
+  <div class="section-num">Section 08</div>
+  <h2 class="section-title">The Whitespace: Where Zim Zam Wins</h2>
+  <p class="section-intro">Mapping all four competitive zones against each other reveals a gap in the market that only Zim Zam currently fills.</p>
+
+  <h3>The four-circle Venn diagram</h3>
+  <p>Imagine four overlapping circles representing four buyer motivations for Zim Zam's target customer:</p>
+
+  <ul class="item-list">
+    <li><span class="item-marker blue">•</span> <strong>Spiritual connection to Zamzam water.</strong> Zamzam water sellers address this — but at high cost, uncertain authenticity, and zero repeatability.</li>
+    <li><span class="item-marker green">✓</span> <strong>Health and mineral wellness.</strong> Mainstream electrolyte brands address this — but with no spiritual dimension, no community alignment, and no Muslim-specific appeal.</li>
+    <li><span class="item-marker amber">!</span> <strong>Halal and Muslim-owned preference.</strong> Halal supplement brands address this — but none are in the mineral/hydration space.</li>
+    <li><span class="item-marker purple">•</span> <strong>Charitable giving and community impact.</strong> Give-back brands address this — but mostly in fashion, food, and jewelry. Nobody in wellness/supplements.</li>
+  </ul>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">The Whitespace</div>
+    <p><strong>Zim Zam Labs is the only product in the market that sits at the intersection of all four circles.</strong> Spiritual connection + health science + Muslim-owned + charitable impact. No competitor occupies this exact position. This isn't a competitive advantage — it's a category creation opportunity.</p>
+  </div>
+
+  <h3>Defensibility</h3>
+  <p>First-mover advantage in a niche market is valuable, but it's not permanent. Someone could theoretically launch a competing Zamzam mineral blend next year. What makes the position defensible is:</p>
+
+  <ul class="item-list">
+    <li><span class="item-marker blue">•</span> <strong>SEO and content ownership.</strong> If Zim Zam creates the best content around Zamzam water science, benefits, and mineral education, it will be extremely hard for a late entrant to displace those rankings. This is the strongest case for investing in SEO and blogging now.</li>
+    <li><span class="item-marker blue">•</span> <strong>Brand loyalty and community.</strong> Muslim consumers who feel a personal connection to Haqq's story and mission won't switch to a faceless competitor easily — especially if the charitable giving is transparent and meaningful.</li>
+    <li><span class="item-marker blue">•</span> <strong>Haqq's personal brand.</strong> As a revert Muslim with a social media following, Haqq <em>is</em> the brand in a way that can't be replicated. People buy from people they trust.</li>
+    <li><span class="item-marker blue">•</span> <strong>Formulation specificity.</strong> The Baja Sea Salt sourcing story, the specific mineral ratios, the ingredient selection — these details are part of the brand IP and story that a competitor would have to build from scratch.</li>
+  </ul>
+</section>
+
+<!-- ═══════════════════════ 09. POSITIONING ═══════════════════════ -->
+<section class="doc-section" id="positioning">
+  <div class="section-num">Section 09</div>
+  <h2 class="section-title">Positioning Recommendations</h2>
+  <p class="section-intro">Based on the competitive landscape, here's how Zim Zam should position itself — and who it should explicitly <em>not</em> try to be.</p>
+
+  <h3>Position as: the daily Zamzam connection</h3>
+  <p>Not a supplement. Not an electrolyte. Not a competitor to bottled Zamzam water. Zim Zam is <strong>a daily practice</strong> — a way to incorporate the mineral blessings of Zamzam water into your everyday life, no matter where you are. This framing elevates the product from "mineral mix" to something integrated into a Muslim's daily wellness and spiritual routine. The science supports the practice; the faith gives it meaning.</p>
+
+  <h3>Don't position as: a supplement brand</h3>
+  <p>The halal supplement market is increasingly crowded with vitamin brands. Zim Zam should not compete for shelf space in that mental category. "Supplement" implies pills and capsules. Zim Zam is water — and that's the whole point.</p>
+
+  <h3>Don't position as: a replacement for actual Zamzam water</h3>
+  <p>This is important for both theological and marketing reasons. Zim Zam recreates the mineral profile of Zamzam water — it does not claim to be Zamzam water. The site already navigates this correctly ("Blended to Mirror ZamZam's Unique Mineral Properties"). Maintain this distinction clearly and respectfully. It protects the brand from criticism and actually makes the value proposition clearer: this is the science of Zamzam, made accessible.</p>
+
+  <h3>Lean into: the revert founder story</h3>
+  <p>Haqq's bio says "Revert Muslim from America." That's three sentences on the current site. It should be the emotional anchor of the entire brand. A revert Muslim discovering Zamzam water, understanding its significance, wanting to experience its benefits daily, researching its mineral composition, and building a product so other Muslims can too — that's not a bio, that's an origin story. And it's exactly the kind of story that Muslim consumers share, rally around, and buy from.</p>
+
+  <div class="summary-box">
+    <h3 class="section-title" >Competitive Landscape Summary</h3>
+    <p><strong>Direct competitors:</strong> None. Zim Zam is alone in this category.</p>
+    <p><strong>Alternative products (Zamzam water sellers):</strong> Validate demand, but are expensive, heavy, uncertain in authenticity, and finite. Zim Zam is a better value proposition for daily use.</p>
+    <p><strong>Halal supplement brands:</strong> Serve the same audience, prove the market, but have zero presence in mineral hydration. Study their trust-building tactics.</p>
+    <p><strong>Mainstream electrolyte brands:</strong> Not competitors. Study their content and education strategies, then apply them through a faith-and-wellness lens.</p>
+    <p><strong>Give-back brands:</strong> Cultural tailwind. Get listed, get specific about charitable impact, and ride this wave.</p>
+    <p style="margin-top:1rem;color:white;"><strong>Bottom line:</strong> The biggest competitor Zim Zam has right now is invisibility. The product, the story, the market timing, and the audience are all aligned. The gap is discoverability — and that's what the remaining deliverables will solve.</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="zimzam_website_audit.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">Website Audit</span>
+  </a>
+  <a href="zimzam_sitemap_architecture.html" class="next">
+    <span class="doc-nav-label">Next &rarr;</span>
+    <span class="doc-nav-title">Sitemap & Architecture</span>
+  </a>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Blog Content Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── Blog: Pillar Color Variables ── */
+:root {
+  --p1: #0891b2;
+  --p2: #7c3aed;
+  --p3: #059669;
+}
+
+/* ── Blog: Month Headers ── */
+.month-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1rem 0 0.5rem;
+  margin-top: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  gap: 0.75rem;
+}
+
+.month-header:first-child { margin-top: 0; }
+
+.month-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.month-count {
+  font-size: 0.68rem;
+  color: var(--gray-400);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Blog: Post Cards ── */
+.post-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 0.75rem 0;
+  transition: border-color 0.2s;
+}
+
+.post-card:hover { border-color: var(--gray-300); }
+
+.post-card-header {
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.post-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--gray-400);
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  padding: 0.65rem 1.15rem;
+}
+
+.post-notes {
+  padding: 0.65rem 1.15rem;
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  border-top: 1px solid var(--gray-100);
+}
+
+.post-notes p { margin-bottom: 0; }
+
+/* ── Blog: Pillar Tags ── */
+.tag-p1 { background: var(--accent-light); color: var(--p1); border: 1px solid #a5f3fc; }
+.tag-p2 { background: var(--purple-bg); color: var(--p2); border: 1px solid var(--purple-border); }
+.tag-p3 { background: var(--green-bg); color: var(--p3); border: 1px solid var(--green-border); }
+
+@media (max-width: 640px) {
+  .month-header { flex-direction: column; gap: 0.25rem; }
+  .post-tags { gap: 0.25rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html" class="active">5. Blog</a><a href="zimzam_platform_recommendation.html">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 5 of 6</div>
+    <h1 class="doc-title">Blog Content Roadmap</h1>
+    <p class="doc-subtitle">A 12-month content calendar with 30 blog post topics — each one a new door from Google into Zim Zam Labs. Built around Ramadan seasonality and the three SEO pillars.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="doc-body">
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#overview"><span class="toc-num">01</span> Roadmap Overview & Cadence</a></li>
+    <li><a href="#pillars"><span class="toc-num">02</span> Content Pillars & Color Key</a></li>
+    <li><a href="#calendar"><span class="toc-num">03</span> The 12-Month Calendar</a></li>
+    <li><a href="#writing"><span class="toc-num">04</span> Writing & Publishing Workflow</a></li>
+    <li><a href="#cta"><span class="toc-num">05</span> CTA Strategy for Blog Posts</a></li>
+    <li><a href="#repurpose"><span class="toc-num">06</span> Content Repurposing Plan</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. OVERVIEW ═══════════════════════ -->
+<section class="doc-section" id="overview">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">Roadmap Overview & Cadence</h2>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-num">30</div>
+      <div class="stat-label">Blog posts over 12 months</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2–3</div>
+      <div class="stat-label">Posts per month</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Content pillars</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">800–1,500</div>
+      <div class="stat-label">Words per post (target)</div>
+    </div>
+  </div>
+
+  <p>The cadence is designed for a one-person operation. Two to three posts per month is achievable for Haqq without burning out, and it's enough to build meaningful SEO momentum over 12 months. Consistency matters more than volume — publishing 2 posts every month beats publishing 8 posts in January and then nothing for three months.</p>
+
+  <div class="verdict verdict-info">
+    <div class="verdict-label">Ramadan Priority</div>
+    <p><strong>The calendar front-loads Ramadan content.</strong> Since Ramadan is Zim Zam's peak relevance window — when Muslims are most conscious about hydration, wellness, and spiritual practices — the first 2–3 months include content specifically designed to rank before Ramadan arrives. Posts published in Month 1–2 will have time to get indexed and start ranking before the seasonal search spike.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">A note on timing</div>
+    <p>This roadmap uses "Month 1, Month 2..." rather than specific calendar months because it starts whenever Haqq launches the new site. If launch happens in April 2026, Month 1 is April. The Ramadan content should be republished and refreshed 6 weeks before Ramadan each year regardless of when the initial launch happens — it's an annual content asset.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 02. PILLARS ═══════════════════════ -->
+<section class="doc-section" id="pillars">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">Content Pillars & Color Key</h2>
+
+  <div class="post-card" style="border-left: 4px solid var(--p1);">
+    <div class="post-title" style="color:var(--p1);">Pillar 1: Zamzam Water Education</div>
+    <div class="post-meta">The knowledge base. Educational content about Zamzam water — its history, mineral profile, spiritual significance, and scientific research. Attracts the highest search volume. Builds authority. Makes Zim Zam the go-to source for Zamzam water information.</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+  </div>
+
+  <div class="post-card" style="border-left: 4px solid var(--p2);">
+    <div class="post-title" style="color:var(--p2);">Pillar 2: Muslim Wellness & Hydration</div>
+    <div class="post-meta">The practical guide. Hydration tips, Ramadan wellness, mineral health education, and lifestyle content for Muslim readers. Connects the product to daily life. Heavy seasonal spike during Ramadan.</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+  </div>
+
+  <div class="post-card" style="border-left: 4px solid var(--p3);">
+    <div class="post-title" style="color:var(--p3);">Pillar 3: Brand, Faith & Community</div>
+    <div class="post-meta">The soul. Personal stories, behind-the-scenes, charitable impact updates, Islamic perspectives on health and wellness, and community-building content. Drives shares and loyalty more than search traffic.</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+  </div>
+
+  <p>The mix across 12 months: roughly 40% Pillar 1, 35% Pillar 2, 25% Pillar 3. Education-heavy early on (to build SEO authority), then shifts toward more community and brand content as the audience grows.</p>
+</section>
+
+<!-- ═══════════════════════ 03. CALENDAR ═══════════════════════ -->
+<section class="doc-section" id="calendar">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">The 12-Month Calendar</h2>
+  <p class="section-intro">30 posts mapped by month, with target keywords, SEO intent, and strategic notes for each one.</p>
+
+  <!-- ── MONTH 1 ── -->
+  <div class="month-header">Month 1: Foundation <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">What Makes Zamzam Water Different From Every Other Water on Earth</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> what makes zamzam water special (500–1,000/mo)<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span> <span class="tag tag-green">High Priority</span></div>
+    <div class="post-notes">The cornerstone blog post. Covers the mineral profile, the alkaline pH, the history of the well, and what peer-reviewed research says. Links to /zamzam-water-science. This post and the Science page will reinforce each other in Google's eyes.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">The Complete Guide to Staying Hydrated During Ramadan</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> how to stay hydrated during ramadan (1,000–3,000/mo seasonal)<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span> <span class="tag tag-green">High Priority</span> <span class="tag tag-amber">Seasonal</span></div>
+    <div class="post-notes">Publish ASAP regardless of calendar timing — this is an evergreen seasonal asset that should be refreshed annually 6 weeks before Ramadan. Covers suhoor and iftar hydration strategy, electrolyte science, and what to avoid. Natural product mention: Zim Zam as part of the suhoor routine.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Why I Created Zim Zam Labs: A Revert's Journey to Zamzam</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zim zam labs story / haqq nation<br><strong>Word count:</strong> 800–1,200</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span> <span class="tag tag-green">High Priority</span></div>
+    <div class="post-notes">The blog version of Haqq's founder story. More personal and informal than the /our-story page. Written in first person. This is the post that gets shared on social media and in Muslim community groups. Include the reversion story, the Zamzam water discovery, and the vision.</div>
+  </div>
+
+  <!-- ── MONTH 2 ── -->
+  <div class="month-header">Month 2: Science & Seasonality <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Zamzam Water Mineral Content: The Full Breakdown (With Data)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water mineral content (200–500/mo)<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Deep-dive into the numbers: calcium, sodium, potassium, magnesium, sulfates, bicarbonates, pH level. Compare to tap water, bottled mineral water, and WHO standards. Use original data tables (not academic paper screenshots). Cite published studies. This is the most AEO-friendly post in the roadmap — written to be cited by AI answer engines.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">5 Drinks for Suhoor That Actually Keep You Hydrated All Day</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> best drinks for suhoor (500–1,500/mo seasonal)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span> <span class="tag tag-amber">Seasonal</span></div>
+    <div class="post-notes">Practical, shareable listicle. Coconut water, mineral water with Zim Zam, salted lassi, chia water, lemon-salt water. Position Zim Zam as one of the five — not the only option. This honesty builds trust. Include the electrolyte science behind each recommendation.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Is Zamzam Water Safe? What the Research Actually Says</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> is zamzam water safe (500–1,000/mo)<br><strong>Word count:</strong> 1,000–1,500</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Addresses the BBC arsenic controversy directly and factually. Cites the multiple peer-reviewed studies that found Zamzam water safe for consumption. This is a trust-building post — showing that Zim Zam takes the science seriously, even when it means addressing uncomfortable questions.</div>
+  </div>
+
+  <!-- ── MONTH 3 ── -->
+  <div class="month-header">Month 3: Depth & Wellness <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">The History of the Zamzam Well: From Hajar to Today</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam well history (1,000–3,000/mo)<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">The spiritual and historical story of the Zamzam well — Hajar's search for water, the miracle, the well's rediscovery, and its significance today. Beautiful storytelling opportunity that also targets a high-volume keyword. Include hadith references.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Why Electrolytes Matter More Than You Think (A Muslim's Guide)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> electrolytes for fasting (500–1,500/mo)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+    <div class="post-notes">Educational content about what electrolytes are, why they matter for health, and why fasting Muslims should pay special attention. Not a product pitch — a genuine health education piece. Zim Zam mentioned as one solution among others.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Every Purchase Helps Gaza: Where Your Money Goes</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> muslim brands that support gaza<br><strong>Word count:</strong> 800–1,000</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Transparency post about the charitable giving program. Which organization, how much per purchase, what the impact looks like. Include any photos or stories if available. This builds trust and gets shared in "brands that support Palestine" roundups.</div>
+  </div>
+
+  <!-- ── MONTH 4 ── -->
+  <div class="month-header">Month 4: Education & Product <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Zamzam Water vs. Tap Water vs. Mineral Water: A Mineral Comparison</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water vs tap water (100–300/mo)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Side-by-side comparison with original data visualization. Calcium, magnesium, sodium, potassium, pH — across all three water types. This is a visual-forward post that works well on social media and is highly citable by AI tools.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">What Does Zim Zam Taste Like? (Honest Review From Our Customers)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zim zam mineral mix review<br><strong>Word count:</strong> 800–1,000</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">User-generated content post. Collect quotes, photos, and video clips from customers and compile them. Address the "what does it taste like?" objection directly. Genuine and unpolished > slick and salesy.</div>
+  </div>
+
+  <!-- ── MONTH 5 ── -->
+  <div class="month-header">Month 5: Health Deep-Dives <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">The Role of Calcium in Zamzam Water (And Why It Matters for Your Bones)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water calcium (100–200/mo)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">First in a potential "mineral deep-dive" mini-series. Zamzam water's extraordinary calcium content (25x tap water) is the biggest scientific differentiator — this post makes that stat the centerpiece. Connects to why calcium citrate was chosen for Zim Zam.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">How to Add Minerals to Your Drinking Water (And Why You Should)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> add minerals to water (1,000–3,000/mo)<br><strong>Word count:</strong> 1,000–1,500</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+    <div class="post-notes">Broader wellness content targeting a higher-volume keyword. Covers mineral drops, Himalayan salt, trace minerals, and Zim Zam. This post can rank for a non-Muslim audience too, expanding the top of funnel. Educational, practical, not overtly faith-focused.</div>
+  </div>
+
+  <!-- ── MONTH 6 ── -->
+  <div class="month-header">Month 6: Community & Authority <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">What the Hadith Say About Zamzam Water: A Collection of Authentic References</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water hadith (500–1,500/mo)<br><strong>Word count:</strong> 1,000–1,500</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">High-search-volume topic that connects the spiritual and scientific angles. Compile authentic hadith about Zamzam water with source citations (Sahih Bukhari, Sahih Muslim, etc.), then contextualize each one. Respectful, well-sourced, and useful for Muslims seeking references.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">The Mineral Benefits of Alkaline Water: What the Science Says</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> mineral water benefits (3,000–5,000/mo)<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+    <div class="post-notes">Higher-competition keyword, but the post can carve a niche by focusing specifically on mineral-rich water (like Zamzam) vs. generic alkaline water trends. Debunk hype, support real science. Positions Haqq as a credible, science-first voice.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">10 Muslim-Owned Wellness Brands You Should Know About</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> muslim owned wellness brand (50–200/mo)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Community-building roundup that features other halal wellness brands (Noor Vitamins, Shifaa, Salaam, etc.) alongside Zim Zam. This is a generosity play — by promoting others, Haqq builds relationships, earns backlinks (featured brands often share and link back), and signals that Zim Zam is part of a larger movement, not just a solo hustle.</div>
+  </div>
+
+  <!-- ── MONTH 7 ── -->
+  <div class="month-header">Month 7: Practical Wellness <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Magnesium Deficiency Signs You Might Be Ignoring</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> magnesium deficiency symptoms (high volume)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+    <div class="post-notes">High-volume wellness keyword. General health education that's relevant to anyone, not just Muslims. Naturally connects to Zim Zam's magnesium glycinate ingredient. Expands the audience beyond the Muslim niche without losing the brand's identity.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Why Baja Sea Salt Is the Purest Salt on Earth (And How We Use It)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> baja sea salt / baja gold sea salt<br><strong>Word count:</strong> 800–1,000</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Ingredient spotlight that tells the Baja Sea Salt sourcing story in depth. This content already exists on the current site in a solid form — expand it into a full blog post with the harvesting process, the mineral proximity to Zamzam, and why this salt was chosen over alternatives.</div>
+  </div>
+
+  <!-- ── MONTH 8 ── -->
+  <div class="month-header">Month 8: SEO Expansion <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Can You Buy Zamzam Water in the USA? (Your Options Explained)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> buy zamzam water USA (est. 500–1,500/mo)<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Directly addresses a high-intent search query. Honestly explains the challenges: Saudi Arabia restricts export, authenticity is uncertain, shipping is expensive. Then introduces Zim Zam as an alternative — not a replacement for the sacred water itself, but a way to get the mineral benefits daily. This post captures transactional intent without being deceptive.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Islamic Health Practices: What the Prophet (PBUH) Taught About Water and Wellness</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> islamic health tips / prophetic medicine water<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Faith-forward content that connects Islamic wellness traditions to modern health science. Covers water in the Sunnah, the Prophet's guidance on drinking, and how mineral hydration aligns with prophetic medicine. Deeply resonant with the audience. Requires careful, respectful handling and proper hadith sourcing.</div>
+  </div>
+
+  <!-- ── MONTH 9 ── -->
+  <div class="month-header">Month 9: Seasonal Prep <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Preparing for Hajj and Umrah: A Hydration and Wellness Checklist</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> hajj preparation checklist / umrah hydration tips<br><strong>Word count:</strong> 1,200–1,500</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span> <span class="tag tag-amber">Seasonal</span></div>
+    <div class="post-notes">Publish before Hajj season. Practical wellness guide for pilgrims — hydration in extreme heat, what to pack, how to maintain mineral balance during strenuous physical worship. Zim Zam's travel-friendly format (lightweight pouch vs. heavy water bottles) is a natural fit.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Zamzam Water pH Level: Why It's Naturally Alkaline</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water pH (200–500/mo)<br><strong>Word count:</strong> 800–1,000</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Short, focused post targeting a specific long-tail keyword. Explains what pH 7.8–8.0 means, why it matters for the body, and how Zim Zam's sodium bicarbonate mirrors this alkalinity. Quick to write, high SEO value for a niche query.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">6-Month Update: What We've Learned, Where We're Going</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> N/A — brand content<br><strong>Word count:</strong> 600–800</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Transparent business update. Sales milestones, charitable giving total so far, customer feedback highlights, what's coming next (new products? packaging updates?). This is the kind of authentic, vulnerable content that builds community loyalty.</div>
+  </div>
+
+  <!-- ── MONTH 10 ── -->
+  <div class="month-header">Month 10: Education Continues <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">The Surprising Link Between Hydration and Mental Clarity During Fasting</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> dehydration during ramadan / fasting brain fog<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span></div>
+    <div class="post-notes">Health science content connecting dehydration to cognitive performance — specifically relevant for Muslims fasting and needing to work, study, or care for families during daylight hours. Evidence-based, practical, and empathetic.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">How Zamzam Water Is Tested: Inside the Saudi Quality Control Process</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water testing / zamzam water quality<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span></div>
+    <div class="post-notes">Fascinating behind-the-scenes content based on published reporting about the King Abdullah Zamzam Water Project, weekly lab testing, and the SR700 million bottling infrastructure. Positions Zim Zam as a brand that deeply understands and respects the source.</div>
+  </div>
+
+  <!-- ── MONTH 11 ── -->
+  <div class="month-header">Month 11: Pre-Ramadan Refresh <span class="month-count">3 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Ramadan Hydration Guide 2027 (Updated)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> ramadan hydration 2027<br><strong>Word count:</strong> Update existing Month 1 post</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span> <span class="tag tag-amber">Seasonal Refresh</span></div>
+    <div class="post-notes">Don't write a new post — update the Month 1 Ramadan hydration guide with the new year, any new research, and customer testimonials. Change the title to include the year. Republish with a fresh date. This is how evergreen seasonal content compounds over time.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Ramadan Gift Guide: Meaningful Gifts for Muslims Who Value Wellness</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> ramadan gift guide / muslim wellness gifts<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span> <span class="tag tag-amber">Seasonal</span></div>
+    <div class="post-notes">Gift-oriented content for the Ramadan season. Feature Zim Zam alongside other Muslim-owned brands (prayer mats, dates, Islamic books, attar). The 10 Muslim-owned brands post from Month 6 was the relationship-builder; this is the seasonal activation of those relationships.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Potassium, Magnesium, and Sodium: The 3 Minerals Your Body Loses While Fasting</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> minerals lost during fasting / electrolytes fasting<br><strong>Word count:</strong> 1,000–1,200</div>
+    <div class="post-tags"><span class="tag tag-p2">Pillar 2</span> <span class="tag tag-amber">Seasonal</span></div>
+    <div class="post-notes">Science-backed content about mineral depletion during extended fasts. Maps directly to Zim Zam's three key minerals. Publishes right before Ramadan for maximum relevance.</div>
+  </div>
+
+  <!-- ── MONTH 12 ── -->
+  <div class="month-header">Month 12: Reflection & Growth <span class="month-count">2 posts</span></div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">One Year of Zim Zam: Lessons, Gratitude, and What's Next</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> N/A — brand content<br><strong>Word count:</strong> 800–1,000</div>
+    <div class="post-tags"><span class="tag tag-p3">Pillar 3</span></div>
+    <div class="post-notes">Year-in-review post. Total charitable giving, customer count, product milestones, lessons learned. Vulnerable, honest, grateful. Sets up Year 2 with renewed energy and credibility.</div>
+  </div>
+
+  <div class="post-card">
+    <div class="post-card-header"><div class="post-title">Zamzam Water Benefits: Everything Science Knows (2027 Updated Guide)</div></div>
+    <div class="post-meta"><strong>Target keyword:</strong> zamzam water benefits (5,000–10,000/mo)<br><strong>Word count:</strong> 1,500–2,000</div>
+    <div class="post-tags"><span class="tag tag-p1">Pillar 1</span> <span class="tag tag-green">High Priority</span></div>
+    <div class="post-notes">The definitive guide — the longest, most comprehensive piece of content on the site. Compiles everything from the year's Pillar 1 posts into one authoritative resource. Targets the highest-volume keyword in the map. Internal links to every related post. This becomes the flagship content asset for Year 2 and beyond.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 04. WRITING WORKFLOW ═══════════════════════ -->
+<section class="doc-section" id="writing">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Writing & Publishing Workflow</h2>
+  <p class="section-intro">Haqq is a one-person operation. The workflow needs to be realistic and sustainable.</p>
+
+  <h3>Recommended workflow</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> <strong>Outline (15 min):</strong> Write 5–7 bullet points covering the main ideas. Use the target keyword as the H1 or a close variation.</li>
+    <li><span class="item-marker num">2</span> <strong>Draft (45–60 min):</strong> Write the post from the outline. Don't aim for perfection — aim for clarity. 800–1,500 words. Use short paragraphs, subheadings, and bullet points for scannability.</li>
+    <li><span class="item-marker num">3</span> <strong>Optimize (15 min):</strong> Add the meta title and meta description. Add alt text to any images. Add 2–3 internal links to other pages on the site. Make sure the target keyword appears in the H1, first paragraph, and at least one subheading.</li>
+    <li><span class="item-marker num">4</span> <strong>Publish and share (10 min):</strong> Publish the post. Share on Instagram and TikTok with a summary or quote graphic. Email subscribers if list exists.</li>
+  </ul>
+
+  <p>Total time per post: <strong>~90 minutes.</strong> That's two posts per month at under 3 hours/month of writing time. Achievable.</p>
+
+  <div class="verdict verdict-info">
+    <div class="verdict-label">AI Writing Assist</div>
+    <p><strong>Haqq can use AI tools (like ChatGPT) to speed up drafting</strong> — but the final voice must be his. AI can generate outlines, suggest structures, and help with research summaries, but the personal stories, Islamic references, and brand voice need to come from Haqq. The audience will know the difference between authentic content and generic AI output.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 05. CTA STRATEGY ═══════════════════════ -->
+<section class="doc-section" id="cta">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">CTA Strategy for Blog Posts</h2>
+
+  <p>Every blog post needs a clear next step for the reader. The CTA should feel natural — not like a hard sell bolted onto an article.</p>
+
+  <h3>CTA template by pillar</h3>
+
+  <div class="post-card" style="border-left: 4px solid var(--p1);">
+    <div class="post-title">Pillar 1 posts (Zamzam education)</div>
+    <div class="post-notes" style="border-top:none;padding-top:0;margin-top:0.25rem;"><strong>CTA:</strong> "Experience the minerals of Zamzam in every glass. Try Zim Zam →" Links to /shop. Positioned after the science content, when the reader is most convinced about the mineral value. Also include a secondary CTA: "Read more about how we recreate this profile →" linking to /ingredients.</div>
+  </div>
+
+  <div class="post-card" style="border-left: 4px solid var(--p2);">
+    <div class="post-title">Pillar 2 posts (Wellness & Ramadan)</div>
+    <div class="post-notes" style="border-top:none;padding-top:0;margin-top:0.25rem;"><strong>CTA:</strong> "Add Zim Zam to your suhoor routine. Shop now →" Links to /shop. Positioned within the practical advice section, where the product naturally fits as a recommendation. Also include email capture: "Get our free Ramadan Hydration Guide →" (future lead magnet).</div>
+  </div>
+
+  <div class="post-card" style="border-left: 4px solid var(--p3);">
+    <div class="post-title">Pillar 3 posts (Brand & community)</div>
+    <div class="post-notes" style="border-top:none;padding-top:0;margin-top:0.25rem;"><strong>CTA:</strong> "Join the Zim Zam community. Follow us on Instagram →" Links to social profiles. For impact/charity posts: "Every bag makes a difference. Shop Zim Zam →" linking to /shop. Community content converts through connection, not urgency.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 06. REPURPOSE ═══════════════════════ -->
+<section class="doc-section" id="repurpose">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Content Repurposing Plan</h2>
+  <p class="section-intro">Every blog post should be repurposed into social media content. One blog post can generate 3–5 pieces of social content with minimal extra effort.</p>
+
+  <h3>From one blog post, create:</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Instagram carousel:</strong> Pull 5–7 key facts or tips from the post, turn each into a slide. This is the highest-performing organic format on Instagram for educational content.</li>
+    <li><span class="item-marker neutral">•</span> <strong>TikTok/Reel:</strong> Haqq talking to camera, sharing the one most surprising fact from the post. 30–60 seconds. Link to the full post in bio.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Quote graphic:</strong> One compelling stat or sentence from the post, designed as a shareable graphic. "Zamzam water contains 25x more calcium than tap water."</li>
+    <li><span class="item-marker neutral">•</span> <strong>Email snippet:</strong> When the email list is built, each post becomes a newsletter topic. 3-sentence summary + "Read the full post" link.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Community post:</strong> Share the blog post link with a personal comment in Muslim Facebook groups, Reddit (r/islam, r/muslimlounge), and other community spaces where Haqq is already present. Don't spam — add value, share the link naturally.</li>
+  </ul>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">The Multiplier Effect</div>
+    <p><strong>2 blog posts per month × 4 social pieces each = 8 pieces of content per month.</strong> This creates a consistent content presence across blog (SEO) + Instagram + TikTok + email without requiring 8 separate creative sessions. Write the blog post first, then slice it up. The blog is the content factory; social media is the distribution channel.</p>
+  </div>
+
+  <div class="summary-box">
+    <h3 class="section-title" >Blog Content Roadmap Summary</h3>
+    <p><strong>30 posts over 12 months.</strong> 12 Pillar 1 (Zamzam education), 11 Pillar 2 (Muslim wellness), 7 Pillar 3 (brand & community).</p>
+    <p><strong>The first 3 months are the most important.</strong> The foundation posts (Zamzam water overview, Ramadan hydration guide, founder story) establish the blog's identity and begin the SEO clock. Every month of indexing makes future content stronger.</p>
+    <p><strong>Ramadan is the annual peak.</strong> Refresh the hydration guide every year, publish seasonal content 6 weeks before, and ride the wave. This is the one time of year when "hydration" and "Muslim" intersect in search at massive scale.</p>
+    <p><strong>~90 minutes per post.</strong> Realistic for a solo founder. Consistency beats volume. Two solid posts per month, every month, for 12 months will transform Zim Zam's search visibility.</p>
+    <p style="margin-top:1rem;color:white;"><strong>Final deliverable up next:</strong> Deliverable 6 (Platform Recommendation) — should Haqq stay on Square or migrate, and if so, to what?</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="zimzam_seo_strategy.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">SEO Strategy</span>
+  </a>
+  <a href="zimzam_platform_recommendation.html" class="next">
+    <span class="doc-nav-label">Next &rarr;</span>
+    <span class="doc-nav-title">Platform Recommendation</span>
+  </a>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>

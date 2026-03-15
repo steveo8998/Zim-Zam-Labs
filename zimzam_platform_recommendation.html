@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zim Zam Labs — Platform Recommendation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   AITHEOS × ZIM ZAM LABS — Brand Standard Template
+   Design System v1.0
+
+   Color Palette: Zim Zam blue, black, white
+   Typography: Inter (body) + Playfair Display (headings)
+   Aesthetic: Premium digital agency — warm, sophisticated, clean
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  /* Primary palette */
+  --ink: #0f172a;
+  --ink-light: #1e293b;
+  --paper: #ffffff;
+  --paper-warm: #f8fafc;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-light: #ecfeff;
+  --accent-subtle: #f0fdfa;
+
+  /* Gold accent */
+  --gold: #b8860b;
+  --gold-light: #d4a017;
+
+  /* Neutral scale */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Semantic colors */
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --red-border: #fecaca;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --amber-border: #fde68a;
+  --green: #059669;
+  --green-bg: #ecfdf5;
+  --green-border: #a7f3d0;
+  --blue: #2563eb;
+  --blue-bg: #eff6ff;
+  --blue-border: #bfdbfe;
+  --purple: #7c3aed;
+  --purple-bg: #f5f3ff;
+  --purple-border: #ddd6fe;
+
+  /* Typography */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --max-width: 800px;
+  --nav-height: 3.25rem;
+
+  /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --border-color: var(--gray-200);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Base Typography ── */
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-height);
+}
+
+/* ── Top Navigation ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--ink);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.site-nav-brand {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav-brand:hover { color: rgba(255,255,255,0.8); }
+
+.site-nav-brand strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.site-nav-links::-webkit-scrollbar { display: none; }
+
+.site-nav-links a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.site-nav-links a:hover {
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.08);
+}
+
+.site-nav-links a.active {
+  color: var(--accent);
+  background: rgba(8,145,178,0.12);
+  font-weight: 600;
+}
+
+/* ── Document Header ── */
+.doc-header {
+  background: var(--ink);
+  color: white;
+  padding: 3.5rem 1.5rem 3rem;
+}
+
+.doc-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.doc-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.doc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 600px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.doc-meta strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+
+/* ── Document Body ── */
+.doc-body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.toc-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toc-list a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s;
+}
+
+.toc-list a:hover {
+  color: var(--accent);
+  background: var(--gray-50);
+}
+
+.toc-num {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+  min-width: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* ── Sections ── */
+.doc-section {
+  padding: 2.75rem 0 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.doc-section:last-child { border-bottom: none; }
+
+.section-num {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin-bottom: 1.75rem;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h3:first-of-type { margin-top: 0; }
+
+p { margin-bottom: 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+
+strong { font-weight: 600; }
+
+code {
+  font-size: 0.82em;
+  background: var(--gray-100);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* ── Verdict / Alert Cards ── */
+.verdict {
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.35rem;
+  margin: 1.15rem 0;
+  border-left: 3px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.verdict-critical {
+  background: var(--red-bg);
+  border-left-color: var(--red);
+  border-top-color: var(--red-border);
+  border-right-color: var(--red-border);
+  border-bottom-color: var(--red-border);
+}
+
+.verdict-warning {
+  background: var(--amber-bg);
+  border-left-color: var(--amber);
+  border-top-color: var(--amber-border);
+  border-right-color: var(--amber-border);
+  border-bottom-color: var(--amber-border);
+}
+
+.verdict-good {
+  background: var(--green-bg);
+  border-left-color: var(--green);
+  border-top-color: var(--green-border);
+  border-right-color: var(--green-border);
+  border-bottom-color: var(--green-border);
+}
+
+.verdict-info {
+  background: var(--blue-bg);
+  border-left-color: var(--blue);
+  border-top-color: var(--blue-border);
+  border-right-color: var(--blue-border);
+  border-bottom-color: var(--blue-border);
+}
+
+.verdict-insight {
+  background: var(--purple-bg);
+  border-left-color: var(--purple);
+  border-top-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+}
+
+.verdict-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.verdict-critical .verdict-label { color: var(--red); }
+.verdict-warning .verdict-label { color: var(--amber); }
+.verdict-good .verdict-label { color: var(--green); }
+.verdict-info .verdict-label { color: var(--blue); }
+.verdict-insight .verdict-label { color: var(--purple); }
+
+.verdict p {
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── Item Lists (replaces emoji icon lists) ── */
+.item-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.item-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.item-list li:last-child { border-bottom: none; }
+
+.item-marker {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: white;
+}
+
+.item-marker.red { background: var(--red); }
+.item-marker.amber { background: var(--amber); }
+.item-marker.green { background: var(--green); }
+.item-marker.blue { background: var(--accent); }
+.item-marker.purple { background: var(--purple); }
+.item-marker.num { background: var(--accent); }
+.item-marker.check { background: var(--green); }
+.item-marker.neutral { background: var(--gray-400); }
+
+/* ── Tags / Badges ── */
+.tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-blue { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.card:hover { border-color: var(--gray-300); }
+
+/* ── Callout ── */
+.callout {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.35rem;
+  margin: 1.25rem 0;
+}
+
+.callout-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.callout p {
+  font-size: 0.88rem;
+  margin-bottom: 0;
+  color: var(--gray-600);
+}
+
+/* ── Summary Box ── */
+.summary-box {
+  background: var(--ink);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.summary-box .section-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.summary-box p {
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.summary-box strong { color: white; }
+
+/* ── Tables ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+table td {
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+table tr:last-child td { border-bottom: none; }
+
+/* ── Scorecard / Stat Grid ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.stat-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Score grades */
+.score-grade { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.score-grade.grade-f { color: var(--red); }
+.score-grade.grade-d { color: var(--amber); }
+.score-grade.grade-c { color: #ca8a04; }
+.score-grade.grade-b { color: var(--blue); }
+.score-grade.grade-a { color: var(--green); }
+
+/* ── Prev/Next Navigation ── */
+.doc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.doc-nav a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.2s;
+}
+
+.doc-nav a:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.doc-nav a.next { text-align: right; }
+
+.doc-nav-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.doc-nav-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.doc-footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+.doc-footer strong {
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+
+  .site-nav { padding: 0 0.75rem; }
+  .site-nav-links a { font-size: 0.62rem; padding: 0.25rem 0.35rem; }
+
+  .doc-header { padding: 2.5rem 1.25rem 2rem; }
+  .doc-body { padding: 0 1.25rem; }
+  .doc-meta { gap: 0.75rem; flex-direction: column; }
+
+  .stat-row { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+
+  table { font-size: 0.75rem; }
+  table th, table td { padding: 0.5rem 0.65rem; }
+
+  .doc-nav { flex-direction: column; }
+
+  .verdict { padding: 1rem 1.15rem; }
+
+  .summary-box { padding: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .site-nav-brand { font-size: 0.6rem; }
+  .doc-header { padding: 2rem 1rem 1.75rem; }
+  .doc-body { padding: 0 1rem; }
+}
+
+
+/* ── Page-Specific Styles ── */
+/* ── Platform: Comparison Table ── */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 1rem 0;
+}
+
+.comp-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  font-weight: 700;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid var(--gray-200);
+  background: var(--gray-50);
+  white-space: nowrap;
+}
+
+.comp-table td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+}
+
+.comp-table tr:last-child td { border-bottom: none; }
+
+.comp-table .feature-name {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.comp-table .winner {
+  background: var(--green-bg);
+  color: var(--green);
+  font-weight: 600;
+}
+
+.comp-table .loser {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.comp-table .neutral {
+  background: var(--gray-50);
+  color: var(--gray-500);
+}
+
+/* ── Platform: Cost Cards ── */
+.cost-card {
+  background: var(--paper);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 1rem 0;
+  transition: border-color 0.2s;
+}
+
+.cost-card:hover { border-color: var(--gray-300); }
+
+.cost-card-header {
+  background: var(--gray-50);
+  padding: 0.9rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.cost-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.55rem 1.15rem;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 0.85rem;
+}
+
+.cost-line:last-child { border-bottom: none; }
+
+.cost-line strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .comp-table { font-size: 0.75rem; }
+  .comp-table th, .comp-table td { padding: 0.5rem 0.65rem; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="site-nav-brand"><strong>Aitheos</strong> &nbsp;· &nbsp;Zim Zam Labs</a>
+  <div class="site-nav-links">
+    <a href="index.html">Overview</a><a href="zimzam_website_audit.html">1. Audit</a><a href="zimzam_competitive_landscape.html">2. Market</a><a href="zimzam_sitemap_architecture.html">3. Sitemap</a><a href="zimzam_seo_strategy.html">4. SEO</a><a href="zimzam_blog_roadmap.html">5. Blog</a><a href="zimzam_platform_recommendation.html" class="active">6. Platform</a>
+  </div>
+</nav>
+
+
+
+<header class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">Zim Zam Labs — Strategy Deliverable 6 of 6</div>
+    <h1 class="doc-title">Platform Recommendation</h1>
+    <p class="doc-subtitle">Should Haqq stay on Square Online or migrate? A clear-eyed assessment based on Zim Zam's specific needs — SEO, blogging, simplicity, and growth.</p>
+    <div class="doc-meta">
+      <div><strong>Client:</strong> Zim Zam Labs / Haqq Nation</div>
+      <div><strong>Prepared:</strong> March 14, 2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="doc-body">
+
+<nav class="toc">
+  <div class="toc-title">Contents</div>
+  <ol class="toc-list">
+    <li><a href="#rec"><span class="toc-num">01</span> The Recommendation</a></li>
+    <li><a href="#comparison"><span class="toc-num">02</span> Square vs. Shopify: Feature-by-Feature</a></li>
+    <li><a href="#why-shopify"><span class="toc-num">03</span> Why Shopify Wins for Zim Zam</a></li>
+    <li><a href="#why-not-square"><span class="toc-num">04</span> Why Square Falls Short</a></li>
+    <li><a href="#cost"><span class="toc-num">05</span> Cost Comparison</a></li>
+    <li><a href="#plan"><span class="toc-num">06</span> Recommended Shopify Plan & Apps</a></li>
+    <li><a href="#migration"><span class="toc-num">07</span> Migration Checklist</a></li>
+    <li><a href="#closing"><span class="toc-num">08</span> Closing: The Complete Strategy at a Glance</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════ 01. RECOMMENDATION ═══════════════════════ -->
+<section class="doc-section" id="rec">
+  <div class="section-num">Section 01</div>
+  <h2 class="section-title">The Recommendation</h2>
+
+  <div class="summary-box">
+    <h3 class="section-title" >Migrate to Shopify Basic.</h3>
+    <p><strong>Shopify is the right platform for Zim Zam Labs.</strong> It gives Haqq everything he needs to execute the SEO strategy, blog roadmap, and site architecture described in Deliverables 3–5 — without requiring any coding knowledge. Square Online can't support the content-driven growth plan this brand needs.</p>
+    <p>The migration is simple: there's one product to move, no customer accounts to transfer, and no complex integrations to preserve. This is the easiest platform migration a business can do.</p>
+  </div>
+
+  <p>This recommendation is based on one question: <strong>which platform gives Zim Zam the best chance of being discovered by Muslims searching for Zamzam water information, and then converting that traffic into sales?</strong> Every feature comparison below flows from that question.</p>
+</section>
+
+<!-- ═══════════════════════ 02. COMPARISON ═══════════════════════ -->
+<section class="doc-section" id="comparison">
+  <div class="section-num">Section 02</div>
+  <h2 class="section-title">Square vs. Shopify: Feature-by-Feature</h2>
+  <p class="section-intro">Graded against what Zim Zam specifically needs based on the strategy in Deliverables 1–5.</p>
+
+  <div class="table-wrap">
+  <table class="comp-table">
+    <thead>
+      <tr><th>Feature</th><th>Square Online</th><th>Shopify Basic</th><th>Winner</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="feature-name">Blog</td>
+        <td class="loser">Basic "stories" feature. No categories, no tags, no RSS feed, limited formatting. Cannot support the 30-post content roadmap effectively.</td>
+        <td class="winner">Built-in blog with categories, tags, author attribution, custom URLs, meta titles/descriptions per post, and RSS feed.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">SEO Controls</td>
+        <td class="loser">Basic meta titles and descriptions. No canonical tag control. No structured data. Limited URL customization.</td>
+        <td class="winner">Full meta tag control. Auto-generated canonical tags, sitemaps, and robots.txt. Schema markup via apps. Clean URL structure.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Page Creation</td>
+        <td class="loser">Limited page types. Difficult to create the 10-page architecture from Deliverable 3 (Our Story, Science, How It Works, FAQ, etc.).</td>
+        <td class="winner">Unlimited custom pages. Full drag-and-drop customization. Can build every page in the proposed sitemap.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Product Reviews</td>
+        <td class="loser">No built-in review system. No easy way to add customer reviews to product pages.</td>
+        <td class="winner">Free review apps available (Shopify Product Reviews, Judge.me free tier). Reviews display on product pages and can generate review schema for Google.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Email Marketing</td>
+        <td class="loser">Basic email capture. No built-in email marketing. Requires third-party tool.</td>
+        <td class="winner">Shopify Email included — up to 10,000 emails/month free. Segmentation, automation, and templates built in.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Social Selling</td>
+        <td class="neutral">Basic integration with some social platforms.</td>
+        <td class="winner">Native integration with Instagram, TikTok, Facebook, Pinterest, and X. Sell directly from social posts.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Analytics</td>
+        <td class="neutral">Basic traffic and sales reports.</td>
+        <td class="winner">Detailed analytics dashboard. Supports Google Analytics 4 and Google Tag Manager integration.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">App Ecosystem</td>
+        <td class="loser">Very limited. Mostly focused on POS and in-store tools.</td>
+        <td class="winner">13,000+ apps covering SEO, reviews, subscriptions, bundles, email, loyalty, upsells, and everything else.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Theme/Design</td>
+        <td class="neutral">Clean but limited templates. Fewer customization options.</td>
+        <td class="winner">100+ free and paid themes. Full site-wide customizer. No code needed for most changes.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Ease of Use</td>
+        <td class="winner">Extremely simple. Minimal learning curve. Good for someone who wants to set and forget.</td>
+        <td class="neutral">Slightly more complex dashboard with more options. Can feel overwhelming at first, but very learnable.</td>
+        <td><span class="tag tag-blue">Square</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Upfront Cost</td>
+        <td class="winner">Free plan available. Paid plans start at $12/mo.</td>
+        <td class="neutral">$39/month for Basic plan. 3-day free trial. First 3 months often discounted to $1/mo.</td>
+        <td><span class="tag tag-blue">Square</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Abandoned Cart Recovery</td>
+        <td class="loser">Not available on free plan. Limited on paid plans.</td>
+        <td class="winner">Included on all paid plans. Automatically emails customers who add to cart but don't check out.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Discount Codes</td>
+        <td class="neutral">Basic discount support.</td>
+        <td class="winner">Advanced discount engine — percentage, fixed amount, buy-X-get-Y, automatic discounts, and seasonal promos (Ramadan sales).</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+      <tr>
+        <td class="feature-name">Subscription/Recurring</td>
+        <td class="loser">Not supported natively.</td>
+        <td class="winner">Supported via apps (Recharge, Seal Subscriptions). Enables a "monthly Zim Zam" model.</td>
+        <td><span class="tag tag-green">Shopify</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Score</div>
+    <p><strong>Shopify wins 12 of 14 categories.</strong> Square only wins on ease of use and upfront cost. For a brand whose entire growth strategy depends on content, SEO, and online sales, those two Square advantages don't outweigh the twelve Shopify advantages.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 03. WHY SHOPIFY ═══════════════════════ -->
+<section class="doc-section" id="why-shopify">
+  <div class="section-num">Section 03</div>
+  <h2 class="section-title">Why Shopify Wins for Zim Zam</h2>
+
+  <h3>1. The blog is a non-negotiable</h3>
+  <p>Deliverable 5 maps out 30 blog posts over 12 months. Each post targets specific keywords, needs proper meta titles and descriptions, requires categories and tags for organization, and needs to display Haqq as the author with credentials. Square's "stories" feature can't support this. Shopify's blog can — and it generates proper SEO-friendly URLs, RSS feeds, and heading structures out of the box.</p>
+
+  <h3>2. The 10-page site needs a real page builder</h3>
+  <p>Deliverable 3 proposes 10 distinct pages — Homepage, Our Story, The Science, How It Works, Shop, Ingredients, Mission, FAQ, Blog, and Contact. Each needs custom layout, unique content, and individual SEO settings. Shopify's page builder handles this natively. Square's page creation is limited and would require workarounds to build most of these pages.</p>
+
+  <h3>3. Product reviews are the #1 missing trust signal</h3>
+  <p>The website audit (Deliverable 1) identified zero customer reviews as the most critical trust gap. Shopify has multiple free review apps (Judge.me, Shopify Product Reviews) that collect, display, and generate review schema markup for Google — meaning star ratings can appear in search results. Square has no equivalent built-in capability.</p>
+
+  <h3>4. Email marketing is built in</h3>
+  <p>Shopify Email gives Haqq 10,000 free emails per month — enough to build and nurture a customer list without paying for a separate tool like Mailchimp or Klaviyo. This supports the email capture strategy described across multiple deliverables.</p>
+
+  <h3>5. Abandoned cart recovery saves sales</h3>
+  <p>Included on all Shopify paid plans. When someone adds Zim Zam to their cart but doesn't complete checkout, Shopify automatically sends them an email reminder. For a $10 product where impulse buyers might get distracted, this feature pays for itself quickly.</p>
+
+  <h3>6. Social selling matches Haqq's strength</h3>
+  <p>Haqq's existing audience is on Instagram and TikTok. Shopify integrates natively with both platforms, allowing products to be tagged in posts, stories, and reels. This turns every piece of social content into a potential direct sale — no "link in bio" friction.</p>
+
+  <h3>7. The subscription model is future revenue</h3>
+  <p>A "monthly Zim Zam" subscription is an obvious product extension — recurring revenue from repeat customers. Shopify supports this through apps like Seal Subscriptions or Recharge. Square doesn't support subscription products natively.</p>
+
+  <div class="callout">
+    <div class="callout-title">The Shopify Muslim DTC community</div>
+    <p>Multiple successful Muslim-owned DTC brands already run on Shopify — including several of the halal supplement brands identified in Deliverable 2 (Noor Vitamins, Shifaa Nutrition, Salaam Nutritionals). The platform is proven for this audience and this product type. Haqq wouldn't be an early adopter — he'd be joining a community that's already figured out the playbook.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 04. WHY NOT SQUARE ═══════════════════════ -->
+<section class="doc-section" id="why-not-square">
+  <div class="section-num">Section 04</div>
+  <h2 class="section-title">Why Square Falls Short</h2>
+  <p class="section-intro">Square Online isn't a bad product — it's just the wrong product for what Zim Zam needs to become.</p>
+
+  <p>Square was built for businesses that sell primarily in person and want a simple online ordering page as a supplement. A restaurant taking online orders. A retail shop adding a web storefront. A service provider booking appointments. For those use cases, Square is excellent.</p>
+
+  <p>Zim Zam is the opposite: a purely online DTC brand whose entire growth strategy depends on content marketing, SEO, and social media conversion. Square's strengths (POS integration, in-person payment processing, simple setup) are irrelevant to Zim Zam's needs. And Square's weaknesses (limited blogging, weak SEO, no review system, no app ecosystem) are precisely the features Zim Zam needs most.</p>
+
+  <div class="verdict verdict-critical">
+    <div class="verdict-label">The Blocker</div>
+    <p><strong>Square's limited blogging and SEO capabilities make Deliverables 4 and 5 unexecutable.</strong> Without proper blogging tools, the 30-post content roadmap can't be implemented effectively. Without proper SEO controls, the keyword strategy can't be deployed. The platform choice isn't just about preference — it determines whether the strategy can work at all.</p>
+  </div>
+
+  <h3>When to stay on Square</h3>
+  <p>The only scenario where staying on Square makes sense is if Haqq decides not to pursue the content/SEO strategy and instead relies exclusively on social media and paid advertising for traffic. In that case, the simpler, cheaper platform is fine because the blog, SEO, and page architecture don't matter. But that approach leaves the business permanently dependent on Haqq's personal posting schedule — the exact vulnerability Deliverable 1 identified.</p>
+</section>
+
+<!-- ═══════════════════════ 05. COST ═══════════════════════ -->
+<section class="doc-section" id="cost">
+  <div class="section-num">Section 05</div>
+  <h2 class="section-title">Cost Comparison</h2>
+  <p class="section-intro">The honest math. Shopify costs more per month, but the ROI potential is significantly higher.</p>
+
+  <div class="cost-card">
+    <div class="cost-card-header">Square Online (current)</div>
+    <div class="cost-line"><span>Monthly plan (free tier)</span><span>$0/mo</span></div>
+    <div class="cost-line"><span>Transaction fee</span><span>2.9% + 30¢</span></div>
+    <div class="cost-line"><span>Custom domain</span><span>~$12–20/yr</span></div>
+    <div class="cost-line"><span>Review app</span><span>N/A</span></div>
+    <div class="cost-line"><span>Email marketing</span><span>$0 (no built-in)</span></div>
+    <div class="cost-line"><span>Estimated annual cost</span><span>~$20/year + fees</span></div>
+  </div>
+
+  <div class="cost-card">
+    <div class="cost-card-header">Shopify Basic (recommended)</div>
+    <div class="cost-line"><span>Monthly plan</span><span>$39/mo ($29/mo if annual)</span></div>
+    <div class="cost-line"><span>Transaction fee (Shopify Payments)</span><span>2.9% + 30¢</span></div>
+    <div class="cost-line"><span>Custom domain</span><span>~$14/yr via Shopify</span></div>
+    <div class="cost-line"><span>Review app (Judge.me free)</span><span>$0</span></div>
+    <div class="cost-line"><span>Email marketing (Shopify Email)</span><span>$0 (10K emails/mo free)</span></div>
+    <div class="cost-line"><span>Theme</span><span>$0 (free themes available)</span></div>
+    <div class="cost-line"><span>Estimated annual cost</span><span>~$360–480/year + fees</span></div>
+  </div>
+
+  <div class="verdict verdict-info">
+    <div class="verdict-label">The Cost Reality</div>
+    <p><strong>The difference is roughly $30–40/month.</strong> That's the cost of one customer buying a bag of Zim Zam per month. If the SEO strategy and blog content roadmap bring in even a handful of new organic customers per month — customers who would never have found the product on Square — the platform pays for itself many times over. The question isn't "can Haqq afford $39/month?" It's "can Haqq afford to stay invisible to Google?"</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Shopify's intro offer</div>
+    <p>Shopify frequently offers the first 3 months at $1/month for new stores. If this promotion is active when Haqq signs up, the total cost for the first 3 months of Shopify would be $3 — less than one month of Square's paid plan. Check shopify.com for current offers.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 06. PLAN & APPS ═══════════════════════ -->
+<section class="doc-section" id="plan">
+  <div class="section-num">Section 06</div>
+  <h2 class="section-title">Recommended Shopify Plan & Apps</h2>
+
+  <h3>Plan: Shopify Basic ($39/mo or $29/mo annual)</h3>
+  <p>This is the right tier. It includes everything Zim Zam needs: full online store, blog, unlimited products, abandoned cart recovery, discount codes, Shopify Email, analytics, and 24/7 support. There's no need for the higher-tier plans at this stage.</p>
+
+  <h3>Recommended free apps</h3>
+  <ul class="item-list">
+    <li><span class="item-marker amber">•</span> <strong>Judge.me (Free plan)</strong> — Product reviews with photo/video support, review request emails, and Google review schema. The single most important app to install on day one.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Shopify Email (Built-in)</strong> — Email marketing with templates, automation, and segmentation. 10,000 emails/month free.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Smart SEO (Free plan)</strong> — Automatically generates JSON-LD structured data (Product, Article, Organization, FAQ schema). Handles the technical SEO from Deliverable 4 with zero manual work.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Google & YouTube Channel (Free)</strong> — Connects the store to Google Merchant Center and Google Analytics. Enables product listings in Google Shopping results.</li>
+    <li><span class="item-marker neutral">•</span> <strong>TikTok & Instagram Shopping (Free)</strong> — Native social selling integration for Haqq's existing platforms.</li>
+  </ul>
+
+  <h3>Recommended paid apps (add when ready)</h3>
+  <ul class="item-list">
+    <li><span class="item-marker neutral">•</span> <strong>Seal Subscriptions ($0–$5/mo)</strong> — Add a "Subscribe & Save" option when ready to launch recurring orders. Free up to 150 subscriptions.</li>
+    <li><span class="item-marker neutral">•</span> <strong>Bundler (Free–$10/mo)</strong> — Create product bundles (e.g., "3-pack" or "Ramadan Gift Set") when the product line expands.</li>
+  </ul>
+
+  <h3>Theme recommendation</h3>
+  <p>Start with a free Shopify theme. <strong>Dawn</strong> (Shopify's default) is clean, fast, and fully customizable — and it's free. It supports all the page types, product features, and blog functionality Zim Zam needs. There's no reason to pay $200–350 for a premium theme at this stage. Upgrade later if needed as the brand grows.</p>
+</section>
+
+<!-- ═══════════════════════ 07. MIGRATION ═══════════════════════ -->
+<section class="doc-section" id="migration">
+  <div class="section-num">Section 07</div>
+  <h2 class="section-title">Migration Checklist</h2>
+  <p class="section-intro">This is one of the simplest migrations possible. One product, no customer accounts, no complex data to move. Here's the step-by-step.</p>
+
+  <h3>Before launch</h3>
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> <strong>Sign up for Shopify Basic.</strong> Use the free trial or $1/mo intro offer. Choose the Dawn theme.</li>
+    <li><span class="item-marker num">2</span> <strong>Set up the product.</strong> Add Zim Zam Premium Mineral Mix with photos, price, description, servings info, and ingredients. Takes 15 minutes.</li>
+    <li><span class="item-marker num">3</span> <strong>Install the 5 free apps</strong> listed above (Judge.me, Smart SEO, Google channel, TikTok, Instagram).</li>
+    <li><span class="item-marker num">4</span> <strong>Build the Phase 1 pages</strong> from Deliverable 3: Homepage, Shop, Our Story, How It Works, FAQ. This is the biggest task — but it's a one-time build.</li>
+    <li><span class="item-marker num">5</span> <strong>Enter SEO metadata</strong> for every page using the blueprints from Deliverable 4 (meta titles, meta descriptions, H1s).</li>
+    <li><span class="item-marker num">6</span> <strong>Set up Shopify Payments.</strong> Connect bank account for payouts. Accepts all major cards, Apple Pay, Google Pay.</li>
+    <li><span class="item-marker num">7</span> <strong>Configure shipping rates and zones.</strong></li>
+    <li><span class="item-marker num">8</span> <strong>Set up Google Analytics 4</strong> via the Google Channel app.</li>
+    <li><span class="item-marker num">9</span> <strong>Connect the domain.</strong> Point zimzamlabs.com to the new Shopify store. Shopify's help docs walk through this for every domain registrar.</li>
+    <li><span class="item-marker num">10</span> <strong>Test everything.</strong> Place a test order. Check mobile. Check all links. Check the blog.</li>
+  </ul>
+
+  <h3>After launch</h3>
+  <ul class="item-list">
+    <li><span class="item-marker check">✓</span> <strong>Set up Google Search Console</strong> and submit the sitemap.</li>
+    <li><span class="item-marker check">✓</span> <strong>Publish the first 3 blog posts</strong> from the Month 1 roadmap.</li>
+    <li><span class="item-marker check">✓</span> <strong>Request reviews</strong> from early customers and anyone who's already purchased from the Square store. Judge.me can send automated review request emails.</li>
+    <li><span class="item-marker check">✓</span> <strong>Update all social media bios</strong> with the new link (same domain, so this may not be needed if the domain was already pointing to Square).</li>
+    <li><span class="item-marker check">✓</span> <strong>Deactivate the Square Online store</strong> once the Shopify store is live and verified.</li>
+  </ul>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Timeline</div>
+    <p><strong>A motivated person can complete this migration in a single weekend.</strong> The product setup takes 15 minutes. The page building takes a few hours per page. The technical setup (domain, payments, apps) takes 1–2 hours. If Haqq spreads it over a week of evenings, the new store can be live in 7 days.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 08. CLOSING ═══════════════════════ -->
+<section class="doc-section" id="closing">
+  <div class="section-num">Section 08</div>
+  <h2 class="section-title">The Complete Strategy at a Glance</h2>
+  <p class="section-intro">Six deliverables. One strategy. Here's how they all connect.</p>
+
+  <div class="summary-box">
+    <h3 class="section-title" >What We Built Together</h3>
+
+    <p><strong>Deliverable 1 — Website Audit:</strong> Identified the core problem — Zim Zam is invisible to Google, the messaging leads with science instead of story, and critical trust signals are missing.</p>
+
+    <p><strong>Deliverable 2 — Competitive Landscape:</strong> Discovered that Zim Zam has zero direct competitors and sits at the intersection of four buyer motivations no other brand occupies: spiritual connection, mineral science, Muslim-owned, and charitable impact.</p>
+
+    <p><strong>Deliverable 3 — Sitemap & Architecture:</strong> Designed a 10-page site structure where every page has one job, targets one keyword cluster, and serves one stage of the buyer journey — expanding from 2 pages to 10 doors into the business from Google.</p>
+
+    <p><strong>Deliverable 4 — SEO Strategy:</strong> Mapped 35+ keywords across three pillars (Zamzam education, Muslim wellness, and brand discovery), assigned them to pages, and wrote every meta title and description. Added AEO strategy so AI tools can discover and cite Zim Zam.</p>
+
+    <p><strong>Deliverable 5 — Blog Roadmap:</strong> Created a 30-post, 12-month content calendar built around Ramadan seasonality — with a realistic 90-minute-per-post workflow for a solo founder, plus a repurposing plan that turns each post into 4–5 social media pieces.</p>
+
+    <p><strong>Deliverable 6 — Platform Recommendation:</strong> Recommended migrating from Square to Shopify Basic to unlock the blogging, SEO, review, and email capabilities the strategy requires — at an incremental cost of ~$30/month.</p>
+  </div>
+
+  <h3>What Haqq should do first</h3>
+  <p>If this all feels like a lot, here are the five highest-impact actions ranked by what moves the needle soonest:</p>
+
+  <ul class="item-list">
+    <li><span class="item-marker num">1</span> <strong>Sign up for Shopify</strong> (take the free trial or $1/mo intro). Build the Phase 1 pages. Move the product over. Go live.</li>
+    <li><span class="item-marker num">2</span> <strong>Get 5 customer reviews on the product page.</strong> Ask friends, family, early customers. This is the single fastest trust-builder.</li>
+    <li><span class="item-marker num">3</span> <strong>Write the Our Story page.</strong> Tell the full reversion and Zamzam journey. This is the page that converts skeptics and gets shared.</li>
+    <li><span class="item-marker num">4</span> <strong>Publish the first 3 blog posts</strong> (Zamzam water explainer, Ramadan hydration guide, founder story). Start the SEO clock.</li>
+    <li><span class="item-marker num">5</span> <strong>Set up Google Search Console</strong> and submit the sitemap. Tell Google the site exists.</li>
+  </ul>
+
+  <p>Those five actions, done in the next 2 weeks, will fundamentally change the trajectory of Zim Zam Labs. Everything else in these deliverables builds from there.</p>
+
+  <div class="verdict verdict-good">
+    <div class="verdict-label">Final Thought</div>
+    <p><strong>Haqq has something most brands would kill for: a genuinely unique product, a deeply resonant story, and an audience that actively wants to support him.</strong> The product works. The mission is real. The community is ready. What's been missing is the infrastructure to connect all of it — a site Google can see, content that educates, a story that moves people, and a platform that supports growth. That's what this strategy provides. Now it's time to build.</p>
+  </div>
+</section>
+
+
+<nav class="doc-nav">
+  <a href="zimzam_blog_roadmap.html" class="prev">
+    <span class="doc-nav-label">&larr; Previous</span>
+    <span class="doc-nav-title">Blog Roadmap</span>
+  </a>
+  <div></div>
+</nav>
+</main>
+
+<footer class="doc-footer">
+  <strong style="color: var(--gold-light);">Stephen Odanovich, Aitheos LLC</strong> · Strategy &amp; Digital Consulting<br>
+  Prepared for Zim Zam Labs · March 2026
+</footer>
+
+</body>
+</html>
